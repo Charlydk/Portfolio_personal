@@ -1,0 +1,15 @@
+
+**#instrucciones para iniciar Node**
+
+*Abre Visual Studio Code y asegúrate de tener tu carpeta fabian-bernardino-portfolio abierta como el proyecto. (Si no, ve a Archivo (File) > Abrir Carpeta (Open Folder...) y selecciona C:\Users\bernardino.20\Documents\fabian-bernardino-portfolio).*
+
+Abre una nueva terminal en VS Code.
+
+Puedes ir a Terminal > Nueva Terminal en el menú superior de VS Code.
+Verás que la terminal se abre y automáticamente se posiciona en la carpeta de tu proyecto: PS C:\Users\bernardino.20\Documents\fabian-bernardino-portfolio>.
+
+Ejecutar este Path ya que el Node es portable
+$env:PATH = "C:\Users\bernardino.20\Documents\node-v22.16.0-win-x64;" + $env:PATH
+
+Ahora, ejecuta el comando para iniciar el servidor de desarrollo:
+& "C:\Users\bernardino.20\Documents\node-v22.16.0-win-x64\npm.cmd" run dev
