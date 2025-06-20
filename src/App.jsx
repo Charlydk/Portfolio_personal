@@ -1,6 +1,7 @@
 import './App.css';
 import NavbarComponent from './components/NavbarComponent';
-import HeroSection from './components/HeroSection'; // <--- Importa tu HeroSection
+import HeroSection from './components/HeroSection';
+import AboutMe from './components/AboutMe';
 
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
 
       {/* 2. HeroSection se renderiza justo debajo de la Navbar */}
         <HeroSection />
+
+      {/* 3. Renderizamos la sección AboutMe aquí */}
+       <AboutMe />
 
       {/* Un div para dar espacio debido al fixed="top" de la Navbar */}
       {/* Esto es importante para que el contenido no quede oculto debajo de la Navbar fija */}
