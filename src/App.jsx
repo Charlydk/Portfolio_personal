@@ -1,35 +1,29 @@
-import './App.css'; // Mantenemos tus estilos personalizados si los tienes
+import './App.css';
+import NavbarComponent from './components/NavbarComponent';
 
-// Importamos componentes de React-Bootstrap
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
 
 function App() {
   return (
     <>
-      {/* Contenedor principal de tu portfolio */}
-      <div className="portfolio-container text-center mt-5"> {/* Agregamos clases de Bootstrap para centrar y margen superior */}
-        <h1>¡Bienvenido al Portfolio de Fabián Bernardino!</h1>
-        <p>Aquí encontrarás mis proyectos y podrás conocer más sobre mi trabajo.</p>
-        <p>Estoy emocionado de compartir mi progreso en programación.</p>
+      {/* 1. NavbarComponent se renderiza primero para que esté en la parte superior */}
+      <NavbarComponent />
 
-        {/* Ejemplo de un componente Button de React-Bootstrap */}
-        <Button variant="primary" className="mt-3">Conoce mis proyectos</Button>
+      {/* Un div para dar espacio debido al fixed="top" de la Navbar */}
+      {/* Esto es importante para que el contenido no quede oculto debajo de la Navbar fija */}
+      <div style={{ paddingTop: '56px' }}> {/* Ajustar de ser necesario*/}
 
-        {/* Ejemplo de un componente Card de React-Bootstrap */}
-        <div className="d-flex justify-content-center mt-4"> {/* Bootstrap para centrar la tarjeta */}
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://via.placeholder.com/150" alt="Placeholder de imagen"/> {/* Reemplaza con una imagen real luego */}
-            <Card.Body>
-              <Card.Title>Proyecto del Ahorcado</Card.Title>
-              <Card.Text>
-                Mi primer gran proyecto. Un juego clásico de adivinanza.
-              </Card.Text>
-              <Button variant="success">Ver Proyecto</Button>
-            </Card.Body>
-          </Card>
+        {/* Este es el contenido de tu página, donde irán las secciones */}
+        <div className="portfolio-container text-center mt-5">
+          <h1>¡Bienvenido al Portfolio de Fabián Bernardino!</h1>
+          <p>Aquí encontrarás mis proyectos y podrás conocer más sobre mi trabajo.</p>
+          <p>Estoy emocionado de compartir mi progreso en programación.</p>
+        
         </div>
-      </div>
+
+     
+
+      </div> {/* Cierre del div de paddingTop */}
     </>
   );
 }
