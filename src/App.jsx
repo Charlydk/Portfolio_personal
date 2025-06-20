@@ -2,6 +2,7 @@ import './App.css';
 import NavbarComponent from './components/NavbarComponent';
 import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
+import FooterComponent from './components/FooterComponent';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       {/* 3. Renderizamos la sección AboutMe aquí */}
        <AboutMe />
 
+      
+
       {/* Un div para dar espacio debido al fixed="top" de la Navbar */}
       {/* Esto es importante para que el contenido no quede oculto debajo de la Navbar fija */}
       <div style={{ paddingTop: '56px' }}> {/* Ajustar de ser necesario*/}
@@ -23,6 +26,10 @@ function App() {
              
 
       </div> {/* Cierre del div de paddingTop */}
+
+      {/* 4. Renderizamos la sección Footer aquí */}
+      <FooterComponent />
+      
     </>
   );
 }
