@@ -3,6 +3,7 @@ import NavbarComponent from './components/NavbarComponent';
 import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
 import FooterComponent from './components/FooterComponent';
+import ProjectsSection from './components/ProjectsSection';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         {/* Aquí irán los demás componentes de sección a medida que los desarrolles y los integres: */}
         {/* <ProjectsSection /> */}
         {/* <ContactForm /> */}
+
+        {/* 5. ProjectSection, seccion de proyectos */}
+        <ProjectsSection />
 
       </div> {/* Cierre del div que contiene las secciones y compensa la Navbar */}
 
