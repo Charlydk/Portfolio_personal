@@ -1,4 +1,3 @@
-// src/App.jsx
 import './App.css';
 import NavbarComponent from './components/NavbarComponent';
 import HeroSection from './components/HeroSection';
@@ -14,7 +13,7 @@ function App() {
       {/* Este div *envuelve* a todos los componentes que van debajo de la Navbar fija. */}
       {/* Es CRUCIAL que el paddingTop se aplique al contenedor de las secciones. */}
       {/* El id="main-content" es opcional pero puede ser útil para CSS o JS futuro. */}
-      <div id="main-content" style={{ paddingTop: '56px' }}> {/* Ajustar de ser necesario */}
+      <div id="main-content" className='container-fluid p-0' style={{ paddingTop: '56px' }}> {/* Ajustar de ser necesario */}
 
         {/* 2. HeroSection es la primera sección de contenido */}
         <HeroSection />
