@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
 import FooterComponent from './components/FooterComponent';
 import ProjectsSection from './components/ProjectsSection';
+import ContactForm from './components/ContactForm';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
 
         {/* 5. ProjectSection, seccion de proyectos */}
         <ProjectsSection />
+
+        {/* 6. ContactForm, seccion de contactos */}
+        <ContactForm />
 
       </div> {/* Cierre del div que contiene las secciones y compensa la Navbar */}
 
