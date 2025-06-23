@@ -1,9 +1,9 @@
+// src/App.jsx
 import './App.css';
 import NavbarComponent from './components/NavbarComponent';
 import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
 import FooterComponent from './components/FooterComponent';
-
 
 function App() {
   return (
@@ -11,25 +11,28 @@ function App() {
       {/* 1. NavbarComponent se renderiza primero para que esté en la parte superior */}
       <NavbarComponent />
 
-      {/* 2. HeroSection se renderiza justo debajo de la Navbar */}
+      {/* Este div *envuelve* a todos los componentes que van debajo de la Navbar fija. */}
+      {/* Es CRUCIAL que el paddingTop se aplique al contenedor de las secciones. */}
+      {/* El id="main-content" es opcional pero puede ser útil para CSS o JS futuro. */}
+      <div id="main-content" style={{ paddingTop: '56px' }}> {/* Ajustar de ser necesario */}
+
+        {/* 2. HeroSection es la primera sección de contenido */}
         <HeroSection />
 
-      {/* 3. Renderizamos la sección AboutMe aquí */}
-       <AboutMe />
+        {/* 3. AboutMe va después de HeroSection */}
+        <AboutMe />
 
-      
+        {/* Aquí irán los demás componentes de sección a medida que los desarrolles y los integres: */}
+        {/* <ProjectsSection /> */}
+        {/* <ContactForm /> */}
 
-      {/* Un div para dar espacio debido al fixed="top" de la Navbar */}
-      {/* Esto es importante para que el contenido no quede oculto debajo de la Navbar fija */}
-      <div style={{ paddingTop: '56px' }}> {/* Ajustar de ser necesario*/}
+      </div> {/* Cierre del div que contiene las secciones y compensa la Navbar */}
 
-             
-
-      </div> {/* Cierre del div de paddingTop */}
-
-      {/* 4. Renderizamos la sección Footer aquí */}
+      {/* 4. FooterComponent se renderiza al final de la página, fuera del div de contenido si quieres que siempre esté abajo */}
+      {/* Si quieres que el footer también tenga el padding, podría ir dentro del div anterior. */}
+      {/* Pero usualmente el footer va al final de todo el contenido principal, no afectado por el padding. */}
       <FooterComponent />
-      
+
     </>
   );
 }
