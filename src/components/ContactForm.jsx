@@ -11,12 +11,17 @@ function ContactForm() {
 // 2. Estados para manejar la validación y los mensajes de error
 const [validated, setValidated] = useState(false); // Para controlar si el formulario ha sido validado (después de un intento de envío)
 const [submitMessage, setSubmitMessage] = useState(null); // Para mensajes generales de éxito o error al enviar (ej. "¡Mensaje enviado!")
+const [isSubmitting, setIsSubmitting] = useState(false);
 
 // 3. Función handleSubmit para manejar el envío y la validación
   const handleSubmit = async (event) => {
     // Prevenir el comportamiento por defecto de recargar la página
     event.preventDefault();
     event.stopPropagation(); // Detener la propagación del evento para evitar problemas
+
+// Limpia mensajes anteriores y activa el estado de envío
+  setSubmitMessage(null); // <-- Limpia el mensaje anterior
+  setIsSubmitting(true);  // <-- Activa el spinner/indicador
 
     // Marcar el formulario como 'validado' para activar los estilos de validación de Bootstrap
     setValidated(true);
@@ -26,6 +31,7 @@ const [submitMessage, setSubmitMessage] = useState(null); // Para mensajes gener
     if (form.checkValidity() === false) { // checkValidity() es un método nativo de JS para formularios HTML5
       // Si el formulario no es válido (por ejemplo, campos 'required' vacíos o tipo 'email' inválido)
       setSubmitMessage({ type: 'danger', text: 'Por favor, completa todos los campos requeridos correctamente.' });
+      setIsSubmitting(false); // <-- Desactiva el spinner si la validación falla
       return; // Detener el envío si hay errores
     }
 
@@ -34,12 +40,13 @@ const [submitMessage, setSubmitMessage] = useState(null); // Para mensajes gener
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setSubmitMessage({ type: 'danger', text: 'Por favor, introduce una dirección de correo electrónico válida.' });
+      setIsSubmitting(false); // <-- Desactiva el spinner si el email es inválido
       return;
     }
 
     // --- Lógica de envío a Formspree ---
     try {
-      // Reemplaza 'YOUR_FORMSPREE_URL' con la URL que obtuviste de Formspree
+      
       const response = await fetch('https://formspree.io/f/mqabyyjo', {
         method: 'POST',
         headers: {
@@ -63,6 +70,9 @@ const [submitMessage, setSubmitMessage] = useState(null); // Para mensajes gener
       // Captura errores de red o cualquier otro error durante el fetch
       console.error('Error al enviar el formulario:', error);
       setSubmitMessage({ type: 'danger', text: 'Hubo un problema de conexión. Por favor, verifica tu internet e inténtalo de nuevo.' });
+    } finally {
+    // 'finally' se ejecuta SIEMPRE, ya sea que la promesa se resuelva o se rechace
+    setIsSubmitting(false); // <-- Desactiva el spinner SIEMPRE al finalizar el intento
     }
     // --- Fin de la lógica de envío a Formspree ---
 
@@ -152,8 +162,15 @@ const [submitMessage, setSubmitMessage] = useState(null); // Para mensajes gener
                   </FloatingLabel>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100">
-                  Enviar Mensaje
+                <Button variant="primary" type="submit" className="w-100" disabled={isSubmitting}> {/* <-- Añade 'disabled' */}
+                  {isSubmitting ? ( // <-- Renderizado condicional
+                    <>
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      {' Enviando...'} {/* Espacio para separar el spinner del texto */}
+                    </>
+                  ) : (
+                    'Enviar Mensaje' // Texto normal cuando no se está enviando
+                  )}
                 </Button>
               </Form>
             </div>
