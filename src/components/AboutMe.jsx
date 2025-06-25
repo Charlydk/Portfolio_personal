@@ -23,13 +23,16 @@ function AboutMe() {
         <Row className="justify-content-center">
           <Col lg={8}> {/* Columna para el contenido principal, centrada */}
             <p className="lead text-center">
-              Soy Fabián Bernardino, un apasionado desarrollador de software en constante búsqueda de nuevos desafíos y conocimientos. Mi viaje en la programación comenzó con un profundo interés en cómo la lógica y la creatividad se unen para construir soluciones innovadoras.
+              Soy Fabián Bernardino, un desarrollador de software apasionado por la tecnología, con una fuerte inclinación hacia el aprendizaje continuo y la resolución de problemas. Actualmente me desempeño como supervisor del área de Workforce en un call center, donde aplico herramientas como Excel y Python para el análisis y manejo eficiente de datos operativos.
             </p>
             <p>
-              He dedicado tiempo a explorar lenguajes como **Python**, donde desarrollé habilidades en lógica de programación y manejo de datos. Más recientemente, me he sumergido en el mundo del desarrollo web con **JavaScript** y el ecosistema de **React**, fascinado por la creación de interfaces de usuario interactivas y responsivas. Mi enfoque actual está en dominar React para construir experiencias web dinámicas y modernas.
+              Mi interés por la programación nació de la fascinación por cómo la lógica y la creatividad pueden combinarse para construir soluciones útiles e innovadoras. A lo largo de mi camino, he desarrollado habilidades en Python, enfocándome en la manipulación de datos y automatización de tareas. Más recientemente, me he sumergido en el desarrollo web con JavaScript y React, disfrutando especialmente de la creación de interfaces interactivas y modernas.
             </p>
             <p>
-              Me considero una persona proactiva, con una gran capacidad de autoaprendizaje y un fuerte deseo de crecer profesionalmente en el ámbito de la tecnología. Disfruto resolviendo problemas, colaborando en equipos y aplicando lo que aprendo en proyectos prácticos. Estoy emocionado por la oportunidad de contribuir en entornos donde pueda seguir aprendiendo y aplicando mis habilidades para generar un impacto positivo.
+              Me apasionan tanto el frontend como el backend, así como el análisis de datos. Esta combinación me permite abordar proyectos desde una perspectiva integral, entendiendo tanto la experiencia del usuario como la lógica detrás de escena.
+            </p>
+             <p>
+              Me considero una persona proactiva, con gran capacidad de autoaprendizaje y un fuerte deseo de seguir creciendo profesionalmente. Disfruto trabajar en equipo, enfrentar nuevos desafíos y aplicar mis conocimientos en proyectos reales que generen impacto.
             </p>
 
             <h3 className="mt-5 mb-3 text-center">Mis Habilidades</h3>
