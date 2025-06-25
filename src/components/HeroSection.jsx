@@ -15,7 +15,7 @@ function HeroSection() {
             {/* img-fluid: Hace la imagen responsiva. rounded-circle: La hace circular. */}
             <img
               src={myProfileImage}
-              alt="Fabián Bernardino - Desarrollador"
+              alt="foto de perfil de Fabián Bernardino - Desarrollador Full Stack"
               className="img-fluid rounded-circle shadow-lg" // shadow-lg añade una sombra
               style={{ maxWidth: '300px', height: 'auto' }} // Controla el tamaño máximo
             />

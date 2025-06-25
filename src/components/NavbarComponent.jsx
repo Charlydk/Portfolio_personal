@@ -1,35 +1,44 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap'; // Importamos los componentes necesarios de React-Bootstrap
+// src/components/NavbarComponent.jsx
 
-function NavbarComponent() {
+import React, { useState } from 'react'; // <-- Asegúrate de importar useState
+import { Navbar, Nav, Container } from 'react-bootstrap'; // Asegúrate de importar Navbar, Nav, Container
+import logo from '../assets/my-logo.png'; // Tu logo
+
+const NavbarComponent = () => {
+  // Estado para controlar si el Navbar está expandido (abierto) o colapsado (cerrado)
+  const [expanded, setExpanded] = useState(false);
+
+  // Función para cerrar el Navbar (colapsarlo)
+  const handleNavLinkClick = () => {
+    setExpanded(false);
+  };
+
   return (
-    // Usamos el componente Navbar de React-Bootstrap
-    // expand="lg": La barra se expandirá (no será hamburguesa) en pantallas grandes (lg) y superiores.
-    // bg="dark": Fondo oscuro. Puedes cambiarlo a "light", "primary", etc., o a un color custom.
-    // variant="dark": El texto de la Navbar será claro para contrastar con el fondo oscuro.
-    // fixed="top": La Navbar se mantendrá en la parte superior de la ventana al hacer scroll.
-    <Navbar expand="lg" bg="dark" variant="dark" fixed="top">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top" expanded={expanded}> {/* <-- Vincula el estado 'expanded' aquí */}
       <Container>
-        {/* Navbar.Brand es para el logo o el nombre de tu portfolio */}
-        <Navbar.Brand href="#home">Fabián Bernardino</Navbar.Brand> {/* Puedes poner tu nombre o "Mi Portfolio" */}
-
-        {/* Navbar.Toggle es el botón de "hamburguesa" que aparece en pantallas pequeñas */}
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-        {/* Navbar.Collapse envuelve los elementos que se colapsarán (los enlaces) */}
-        <Navbar.Collapse id="responsive-navbar-nav">
-          {/* Nav contiene los enlaces de navegación, ml-auto los alinea a la derecha */}
-          <Nav className="ms-auto"> {/* 'ms-auto' es 'margin-left: auto' en Bootstrap 5 */}
-            {/* Nav.Link son los enlaces individuales. Sus href apuntarán a los IDs de las secciones. */}
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#about">Sobre Mí</Nav.Link>
-            <Nav.Link href="#projects">Proyectos</Nav.Link>
-            <Nav.Link href="#contact">Contacto</Nav.Link>
+        <Navbar.Brand href="#home">
+          <img
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="Fabian Bernardino Logo" // Buen uso de alt!
+          />{' '}
+          Fabián Bernardino
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)} /> {/* <-- Vincula el toggle a setExpanded */}
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            {/* Usa la función handleNavLinkClick en el onClick de cada Nav.Link */}
+            <Nav.Link href="#home" onClick={handleNavLinkClick}>Inicio</Nav.Link>
+            <Nav.Link href="#about" onClick={handleNavLinkClick}>Sobre Mí</Nav.Link>
+            <Nav.Link href="#projects" onClick={handleNavLinkClick}>Proyectos</Nav.Link>
+            <Nav.Link href="#contact" onClick={handleNavLinkClick}>Contacto</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavbarComponent;
