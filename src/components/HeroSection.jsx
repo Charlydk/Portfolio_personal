@@ -31,10 +31,10 @@ function HeroSection() {
               Actualmente explorando el mundo de **React** y **Python**.
             </p>
             {/* Botones de acción */}
-            <Button variant="primary" size="lg" className="me-3 mb-2">
+            <Button variant="primary" size="lg" className="me-3 mb-2" href="#projects">
               Mis Proyectos
             </Button>
-            <Button variant="outline-dark" size="lg" className="mb-2">
+            <Button variant="outline-dark" size="lg" className="mb-2" href="#contact">
               Contáctame
             </Button>
           </Col>
