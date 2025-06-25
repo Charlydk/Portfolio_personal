@@ -13,3 +13,6 @@ $env:PATH = "C:\Users\bernardino.20\Documents\node-v22.16.0-win-x64;" + $env:PAT
 
 Ahora, ejecuta el comando para iniciar el servidor de desarrollo:
 & "C:\Users\bernardino.20\Documents\node-v22.16.0-win-x64\npm.cmd" run dev
+
+
+
