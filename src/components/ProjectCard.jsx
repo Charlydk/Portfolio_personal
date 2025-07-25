@@ -8,13 +8,14 @@ function ProjectCard({ title, description, imageUrl, projectUrl, repoUrl }) {
     // className="h-100": Asegura que todas las tarjetas en una fila tengan la misma altura,
     //                     útil para el diseño de cuadrícula.
     // shadow-sm: Una sombra sutil para darle profundidad.
-    <Card className="h-100 shadow-sm">
+    <Card className="h-100 shadow-sm" >
       {/* Card.Img para la imagen del proyecto */}
       <Card.Img
         variant="top" // La imagen se posiciona en la parte superior de la tarjeta
         src={imageUrl} // La URL de la imagen viene de las props
         alt={`Imagen del proyecto ${title}`} // Texto alternativo descriptivo para SEO y accesibilidad
         style={{ objectFit: 'cover', height: '200px' }} // Estilo para que la imagen cubra el área y tenga altura fija
+        loading="lazy"
       />
       <Card.Body className="d-flex flex-column"> {/* Usamos flex-column para que el contenido se apile y los botones queden al final */}
         {/* Card.Title para el título del proyecto */}

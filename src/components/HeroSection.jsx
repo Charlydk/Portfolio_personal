@@ -22,21 +22,24 @@ function HeroSection() {
           </Col>
           <Col xs={12} md={6} className="order-md-1"> {/* Ordenamos el texto para que vaya a la izquierda en md+ */}
             {/* Título principal */}
-            <h1 className="display-4 fw-bold mb-3">
+            <h1 className="display-4 fw-bold mb-3" data-aos="fade-up">
               ¡Hola, soy <span className="text-primary">Fabián Bernardino</span>!
             </h1>
             {/* Subtítulo/Eslogan */}
-            <p className="lead mb-4">
+            <p className="lead mb-4" data-aos="fade-up" data-aos-delay="200">
               Desarrollador de software apasionado por crear soluciones y construir experiencias interactivas.
               Actualmente explorando el mundo de **React** y **Python**.
             </p>
             {/* Botones de acción */}
+            <div data-aos="fade-up" data-aos-delay="400">
             <Button variant="primary" size="lg" className="me-3 mb-2" href="#projects">
               Mis Proyectos
             </Button>
             <Button variant="outline-dark" size="lg" className="mb-2" href="#contact">
               Contáctame
             </Button>
+            </div>
+         
           </Col>
         </Row>
       </Container>

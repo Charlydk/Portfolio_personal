@@ -22,7 +22,8 @@ const NavbarComponent = () => {
             width="30"
             height="30"
             className="d-inline-block align-top"
-            alt="Fabian Bernardino Logo" // Buen uso de alt!
+            alt="Fabian Bernardino Logo"
+            loading="lazy"
           />{' '}
           Fabián Bernardino
         </Navbar.Brand>

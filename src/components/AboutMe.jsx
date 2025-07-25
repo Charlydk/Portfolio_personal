@@ -19,9 +19,10 @@ function AboutMe() {
     // py-5: Padding vertical.
     <section id="about" className="bg-white py-5">
       <Container>
-        <h2 className="text-center mb-4 display-5 fw-bold">Sobre Mí</h2>
-        <Row className="justify-content-center">
-          <Col lg={8}> {/* Columna para el contenido principal, centrada */}
+        <h2 className="text-center mb-4 display-5 fw-bold" data-aos="fade-down">Sobre Mí</h2>
+        <Row className="justify-content-center" data-aos="fade-right">
+          <Col lg={8} data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"data-aos-duration="500">
+          {/* Columna para el contenido principal, centrada */}
             <p className="lead text-center">
               Soy Fabián Bernardino, un desarrollador de software apasionado por la tecnología, con una fuerte inclinación hacia el aprendizaje continuo y la resolución de problemas. Actualmente me desempeño como supervisor del área de Workforce en un call center, donde aplico herramientas como Excel y Python para el análisis y manejo eficiente de datos operativos.
             </p>
@@ -35,8 +36,8 @@ function AboutMe() {
               Me considero una persona proactiva, con gran capacidad de autoaprendizaje y un fuerte deseo de seguir creciendo profesionalmente. Disfruto trabajar en equipo, enfrentar nuevos desafíos y aplicar mis conocimientos en proyectos reales que generen impacto.
             </p>
 
-            <h3 className="mt-5 mb-3 text-center">Mis Habilidades</h3>
-            <div className="d-flex flex-wrap justify-content-center">
+            <h3 className="mt-5 mb-3 text-center" data-aos="flip-left">Mis Habilidades</h3>
+            <div className="d-flex flex-wrap justify-content-center" data-aos="flip-right">
               {skills.map((skill, index) => (
                 <Badge key={index} bg="primary" className="m-1 p-2 fs-6">
                   {skill}
