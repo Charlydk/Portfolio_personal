@@ -4,9 +4,9 @@ const projects = [
     title: "Juego del Ahorcado",
     description: "Mi proyecto estrella de C#, un juego interactivo del ahorcado que demuestra habilidades en lógica, manejo de cadenas y gestión de entradas de usuario. Incluye modos de un jugador y multijugador.",
     imageUrl: `${import.meta.env.BASE_URL}images/hangman-game.png`,
-    projectUrl: "https://charlydk.github.io/ahorcado-game/frontend/", // URL a un demo en vivo (si tienes)
-    repoUrl: "https://github.com/Charlydk/ahorcado-game.git", // URL a tu repositorio de GitHub
-    technologies: ["C#", "Consola"] // Tecnologías usadas, opcional para mostrar en la tarjeta
+    projectUrl: "https://charlydk.github.io/ahorcado-game/frontend/",
+    repoUrl: "https://github.com/Charlydk/ahorcado-game.git",
+    technologies: ["C#", "Consola"]
   },
   {
     id: 2,
@@ -22,8 +22,8 @@ const projects = [
     title: "Mi Primer Portfolio Web",
     description: "El portfolio que estás viendo ahora mismo. Construido con React y React-Bootstrap, demostrando diseño responsivo, manejo de componentes y despliegue web básico.",
     imageUrl: `${import.meta.env.BASE_URL}images/portfolio-web.png`,
-    projectUrl: "https://charlydk.github.io/fabian-bernardino-portfolio/", // Tu URL de GitHub Pages cuando esté desplegado
-    repoUrl: "https://github.com/Charlydk/fabian-bernardino-portfolio",
+    projectUrl: "https://charlydk.github.io/Portfolio_personal/",
+    repoUrl: "https://github.com/Charlydk/Portfolio_personal/",
     technologies: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"]
   },
   // Añadir más proyectos aquí siguiendo el mismo formato
