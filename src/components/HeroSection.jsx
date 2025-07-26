@@ -32,7 +32,7 @@ function HeroSection() {
             {/* Subtítulo/Eslogan */}
             <p className="lead mb-4" data-aos="fade-up" data-aos-delay="200">
               Desarrollador de software apasionado por crear soluciones y construir experiencias interactivas.
-              Actualmente explorando el mundo de **React** y **Python**.
+              Actualmente explorando el mundo de **React**, **Python** y **C#**.
             </p>
             {/* Botones de acción */}
             <div data-aos="fade-up" data-aos-delay="400">
