@@ -3,9 +3,7 @@ html {
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  
   text-align: center;
 }
 
@@ -44,4 +42,36 @@ html {
 
 .read-the-docs {
   color: #888;
+}
+
+.bg-custom-section {
+  /* Un gris muy claro y suave. Es el mismo que usa Bootstrap para "bg-light". */
+  background-color: #e7ecee; 
+}
+
+.about-me-image {
+  max-width: 350px;
+  height: auto;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* <-- AÑADE ESTA LÍNEA */
+}
+
+.about-me-image:hover {
+  transform: scale(1.05) translateY(-10px); /* La escala al 105% Y la mueve 10px hacia arriba */
+  box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2); /* Hacemos la sombra más grande y oscura para realzar el efecto 3D */
+}
+
+.about-me-text p {
+  font-size: 1.3rem; /* Un poco más grande que el tamaño por defecto */
+  line-height: 1.7;  /* Más espacio entre líneas para que "respire" mejor */
+}
+
+.project-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Definimos el efecto que ocurre al pasar el mouse */
+.project-card:hover {
+  transform: scale(1.03); /* Un zoom sutil del 3% */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15); /* Una sombra más pronunciada para que "salte" de la página */
 }

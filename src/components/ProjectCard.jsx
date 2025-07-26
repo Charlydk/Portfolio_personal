@@ -8,7 +8,7 @@ function ProjectCard({ title, description, imageUrl, projectUrl, repoUrl }) {
     // className="h-100": Asegura que todas las tarjetas en una fila tengan la misma altura,
     //                     útil para el diseño de cuadrícula.
     // shadow-sm: Una sombra sutil para darle profundidad.
-    <Card className="h-100 shadow-sm" >
+    <Card className="h-100 shadow-sm project-card" >
       {/* Card.Img para la imagen del proyecto */}
       <Card.Img
         variant="top" // La imagen se posiciona en la parte superior de la tarjeta

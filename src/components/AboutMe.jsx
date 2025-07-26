@@ -1,63 +1,63 @@
 // src/components/AboutMe.jsx
 
 import React from 'react';
-import { Container, Row, Col, Badge } from 'react-bootstrap'; // Importamos Badge para las habilidades
-// Puedes importar una imagen si quieres añadir una aquí, similar a la HeroSection
-// import anotherImage from '../assets/my-coding-setup.jpg';
+import { Container, Row, Col, Badge, Image } from 'react-bootstrap'; // <-- Importamos Image
+import workspaceImage from '../assets/workspace.png'; // <-- 2. Importamos la nueva imagen
+import './AnimatedBackground.css';
 
 function AboutMe() {
-  // Un array para tus habilidades. Puedes añadir o quitar las que necesites.
   const skills = [
     'JavaScript', 'React', 'HTML5', 'CSS3', 'Bootstrap',
-    'Python', 'Flask', 'SQL', 'Git', 'GitHub', 'Vite', 'VS Code',
+    'Python', 'SQL', 'Git', 'GitHub', 'Vite', 'VS Code',
     'Problem Solving', 'Teamwork', 'Comunicación', 'Aprendizaje Continuo'
   ];
 
   return (
-    // id="about": Crucial para la navegación desde la Navbar.
-    // bg-white: Fondo blanco. Puedes cambiarlo a bg-light si prefieres.
-    // py-5: Padding vertical.
-    <section id="about" className="bg-white py-5">
+    <section id="about" className="bg-custom-section py-5"> {/* Usamos la clase del fondo gris claro */}
       <Container>
-        <h2 className="text-center mb-4 display-5 fw-bold" data-aos="fade-down">Sobre Mí</h2>
-        <Row className="justify-content-center" data-aos="fade-right">
-          <Col lg={8} data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"data-aos-duration="500">
-          {/* Columna para el contenido principal, centrada */}
-            <p className="lead text-center">
-              Soy Fabián Bernardino, un desarrollador de software apasionado por la tecnología, con una fuerte inclinación hacia el aprendizaje continuo y la resolución de problemas. Actualmente me desempeño como supervisor del área de Workforce en un call center, donde aplico herramientas como Excel y Python para el análisis y manejo eficiente de datos operativos.
-            </p>
-            <p>
-              Mi interés por la programación nació de la fascinación por cómo la lógica y la creatividad pueden combinarse para construir soluciones útiles e innovadoras. A lo largo de mi camino, he desarrollado habilidades en Python, enfocándome en la manipulación de datos y automatización de tareas. Más recientemente, me he sumergido en el desarrollo web con JavaScript y React, disfrutando especialmente de la creación de interfaces interactivas y modernas.
-            </p>
-            <p>
-              Me apasionan tanto el frontend como el backend, así como el análisis de datos. Esta combinación me permite abordar proyectos desde una perspectiva integral, entendiendo tanto la experiencia del usuario como la lógica detrás de escena.
-            </p>
-             <p>
-              Me considero una persona proactiva, con gran capacidad de autoaprendizaje y un fuerte deseo de seguir creciendo profesionalmente. Disfruto trabajar en equipo, enfrentar nuevos desafíos y aplicar mis conocimientos en proyectos reales que generen impacto.
-            </p>
+        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-down">Sobre Mí</h2>
+        
+        {/* Usaremos un layout de dos columnas */}
+        <Row className="align-items-center">
 
-            <h3 className="mt-5 mb-3 text-center" data-aos="flip-left">Mis Habilidades</h3>
-            <div className="d-flex flex-wrap justify-content-center" data-aos="flip-right">
-              {skills.map((skill, index) => (
-                <Badge key={index} bg="primary" className="m-1 p-2 fs-6">
+          {/* --- Columna Izquierda: Texto --- */}
+          <Col lg={7} data-aos="fade-right">
+            <div className="about-me-text"> {/* 3. Usamos una clase para controlar el tamaño del texto */}
+              <p className="lead"> {/* La clase 'lead' hace el primer párrafo más grande */}
+                Soy Fabián Bernardino, un desarrollador de software apasionado por la tecnología, con una fuerte inclinación hacia el aprendizaje continuo y la resolución de problemas.
+              </p>
+              <p>
+                Mi interés por la programación nació de la fascinación por cómo la lógica y la creatividad pueden combinarse para construir soluciones útiles e innovadoras. A lo largo de mi camino, he desarrollado habilidades en Python y, más recientemente, me he sumergido en el desarrollo web con JavaScript y React.
+              </p>
+              <p>
+                Me considero una persona proactiva, con gran capacidad de autoaprendizaje y un fuerte deseo de seguir creciendo profesionalmente. Disfruto trabajar en equipo y enfrentar nuevos desafíos.
+              </p>
+            </div>
+
+            <h3 className="mt-3 mb-3 text-center">Mis Habilidades</h3>
+            <div className="d-flex flex-wrap justify-content-center ">
+              {skills.map((skill) => (
+                <Badge key={skill} pill bg="primary" className="m-1 p-2 fs-6">
                   {skill}
                 </Badge>
               ))}
             </div>
 
-            {/* Si quieres añadir otra imagen aquí, similar a la HeroSection */}
-            {/*
-            <div className="text-center mt-5">
-              <img
-                src={anotherImage}
-                alt="Configuración de programación"
-                className="img-fluid rounded shadow-sm"
-                style={{ maxWidth: '400px', height: 'auto' }}
-              />
-            </div>
-            */}
-
           </Col>
+
+          {/* --- Columna Derecha: Imagen y Habilidades --- */}
+          <Col lg={5} data-aos="fade-left" data-aos-delay="200">
+            <Image 
+              src={workspaceImage} 
+              rounded 
+              fluid 
+              className="shadow-lg mb-4 about-me-image "
+              alt="Espacio de trabajo de desarrollo"
+              style={{ maxWidth: '350px', height: 'auto',}} // Asegura que la imagen sea responsiva
+            />
+            
+          </Col>
+
         </Row>
       </Container>
     </section>

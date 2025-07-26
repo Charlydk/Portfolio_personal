@@ -1,14 +1,18 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap'; // Importamos Container, Row, Col y Button de React-Bootstrap
-import myProfileImage from '../assets/profile-pic.jpg'; // Asegúrate de que esta ruta sea correcta
+import myProfileImage from '../assets/profile-pic.jpg';
+import './AnimatedBackground.css';
 
 function HeroSection() {
   return (
     // La etiqueta <section> es semántica y ayuda al SEO.
     // id="home": Crucial para la navegación suave desde la Navbar.
     // className="bg-light text-dark text-center py-5": Clases de Bootstrap para un fondo claro, texto oscuro, centrado y padding vertical.
-    <section id="home" className="bg-light text-dark text-center py-5" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
-      <Container>
+    <section id="home"
+    className="text-white text-center py-5 position-relative overflow-hidden"
+    style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
+    <div className="animated-gradient"></div>
+      <Container className="position-relative" style={{ zIndex: 1 }}>
         <Row className="align-items-center justify-content-center">
           <Col xs={12} md={6} className="order-md-2 mb-4 mb-md-0"> {/* Ordenamos la imagen para que vaya a la derecha en md+ */}
             {/* Imagen de perfil */}
@@ -35,7 +39,7 @@ function HeroSection() {
             <Button variant="primary" size="lg" className="me-3 mb-2" href="#projects">
               Mis Proyectos
             </Button>
-            <Button variant="outline-dark" size="lg" className="mb-2" href="#contact">
+            <Button variant="outline-light" size="lg" className="mb-2" href="#contact">
               Contáctame
             </Button>
             </div>

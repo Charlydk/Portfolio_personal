@@ -1,0 +1,42 @@
+.animated-gradient {
+    /* Posicionamiento: ocupa todo el espacio de su contenedor padre */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    /* El truco del gradiente animado */
+    background: linear-gradient(
+      -45deg, 
+      #0b0e41, /* Color 1 (Azul oscuro) */
+      #1b263b, /* Color 2 (Azul piedra) */
+      #415a77, /* Color 3 (Azul grisáceo) */
+      #070be4  /* Color 4 (Azul pálido) */
+    );
+    background-size: 400% 400%; /* Hacemos el fondo 4 veces más grande */
+    
+    /* La animación */
+    animation: animate-gradient 10s ease infinite;
+  
+    /* Lo ponemos detrás del contenido */
+    z-index: -1; 
+  }
+  
+  /* Keyframes que mueven el fondo */
+  @keyframes animate-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animated-gradient.subtle {
+    opacity: 0.15; /* Hacemos la animación muy transparente */
+    animation-duration: 30s; /* Hacemos que se mueva más lento */
+  }

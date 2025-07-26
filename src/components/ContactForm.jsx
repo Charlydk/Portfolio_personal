@@ -80,7 +80,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
   };
 
   return (
-    <section id="contact" className="py-5 bg-light">
+    <section id="contact" className="py-5 bg-custom-section">
       <Container>
         <h2 className="text-center mb-5 display-5 fw-bold" data-aos="zoom-in-right">Contacto </h2>
         <p className="text-center lead mb-4" data-aos="zoom-in-right">¿Tienes alguna pregunta o quieres colaborar? ¡Contáctame!</p>

@@ -22,8 +22,8 @@ const projects = [
     title: "Mi Primer Portfolio Web",
     description: "El portfolio que estás viendo ahora mismo. Construido con React y React-Bootstrap, demostrando diseño responsivo, manejo de componentes y despliegue web básico.",
     imageUrl: `${import.meta.env.BASE_URL}images/portfolio-web.png`,
-    projectUrl: "https://charlydk.github.io/fabian-bernardino-portfolio/", // Tu URL de GitHub Pages cuando esté desplegado
-    repoUrl: "https://github.com/Charlydk/fabian-bernardino-portfolio",
+    projectUrl: "https://charlydk.github.io/Portfolio_personal/", // Tu URL de GitHub Pages cuando esté desplegado
+    repoUrl: "https://github.com/Charlydk/Portfolio_personal.git",
     technologies: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"]
   },
   // Añadir más proyectos aquí siguiendo el mismo formato
