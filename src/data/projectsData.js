@@ -1,6 +1,26 @@
 const projects = [
+  
   {
-    id: 1, // Un ID único para cada proyecto
+    id: 1,
+    title: "Rescate Espacial (Vanilla JS Game)",
+    description: "Un juego del ahorcado reinventado con una temática espacial. Creado con JavaScript puro, demuestra una sólida refactorización de código y diseño de UI.",
+    
+    modalContent: {
+      title: "Detalles de 'Rescate Espacial'",
+      text: [
+          "➡️ **Concepto:** 'Rescate Espacial' es la modernización completa de uno de mis primeros proyectos (https://github.com/Charlydk/Juego_ahorcadito.git). El objetivo fue doble: preservar la lógica original del juego y reconstruir toda su base técnica aplicando las mejores prácticas del desarrollo web moderno.",
+          "🛠️ **El Principal Desafío:** Refactorizar el código fue el reto central. Transformé una aplicación multi-página con variables globales a una **Single Page Application (SPA)** con un **objeto de estado centralizado** para gestionar la partida. Esto eliminó errores, mejoró la mantenibilidad y demostró un enfoque más profesional para la arquitectura de software.",
+          "🤓 **Aprendizajes Clave:** Este proyecto fue un ejercicio práctico fundamental en **JavaScript puro (Vanilla JS)**, manipulación del DOM, gestión de estado sin frameworks y diseño responsivo con **CSS Flexbox**. Me permitió aplicar directamente conceptos modernos sobre una base que yo mismo había creado, evidenciando mi crecimiento como desarrollador."
+      ]
+    },
+  
+    imageUrl: `${import.meta.env.BASE_URL}images/rescate_espacial.png`, // <-- Recuerda añadir una imagen del nuevo juego
+    projectUrl: "https://charlydk.github.io/Rescate_Espacial/",
+    repoUrl: "https://github.com/Charlydk/Rescate_Espacial.git",
+    technologies: ["JavaScript (Vanilla)", "CSS3", "HTML5", "Responsive Design", "Refactoring"]
+  },
+  {
+    id: 2, // Un ID único para cada proyecto
     title: "Juego del Ahorcado",
     description: "Una aplicación web completa con backend en C# y frontend en JavaScript. Incluye modos de un jugador, versus y un modo multijugador online en tiempo real con SignalR.",
     modalContent: {
@@ -15,23 +35,6 @@ const projects = [
     projectUrl: "https://charlydk.github.io/ahorcado-game/frontend/", // URL a un demo en vivo (si tienes)
     repoUrl: "https://github.com/Charlydk/ahorcado-game.git", // URL a tu repositorio de GitHub
     technologies: ["C#", "ASP.NET", "SignalR", "JavaScript (Vanilla)", "Bootstrap 5", "Docker"] // Tecnologías usadas, opcional para mostrar en la tarjeta
-  },
-  {
-    id: 2,
-    title: "Rescata a la Princesa (CLI)",
-    description: "Un juego de aventura basado en texto desarrollado en c#. Los jugadores toman decisiones para superar desafíos y rescatar a la princesa de un dragón, mostrando habilidades en ramificación de lógica y manejo de estados.",
-    modalContent: {
-    title: "Detalles del Desarrollo del Portfolio",
-    text: [
-      "➡️Este proyecto fue un desafío personal para aplicar y consolidar mis conocimientos en el ecosistema de React. La meta era construir un sitio de una sola página (SPA) que no solo fuera visualmente atractivo, sino también rápido, funcional y fácil de mantener.",
-      "**Desafíos Técnicos:** Uno de los principales retos fue asegurar una experiencia de usuario fluida, implementando animaciones que no comprometieran el rendimiento. La configuración del despliegue en GitHub Pages para un proyecto con Vite y React Router (si se usara) también requirió una configuración específica para manejar las rutas correctamente.",
-      "**Aprendizajes Clave:** A través de este proyecto, profundicé en el manejo de estados de React con Hooks, la creación de componentes reutilizables y la integración de librerías de terceros como React-Bootstrap y AOS. Fue una excelente práctica para entender el ciclo de vida completo de una aplicación web moderna, desde el desarrollo hasta el despliegue."
-      ]
-    },
-    imageUrl: `${import.meta.env.BASE_URL}images/princess-rescue.png`,
-    projectUrl: "https://charlydk.github.io/princes rescue/",
-    repoUrl: "https://github.com/Charlydk/princess-rescue-repo",
-    technologies: ["C#", "CLI"]
   },
   {
     id: 3,
@@ -50,10 +53,13 @@ const projects = [
     repoUrl: "https://github.com/Charlydk/Portfolio_personal.git",
     technologies: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"]
   },
+
+  
+
   // Añadir más proyectos aquí siguiendo el mismo formato
   /*
   {
-    id: 4,
+    id: 5,
     title: "Nombre de Otro Proyecto",
     description: "Breve descripción de otro proyecto. Destaca lo que hace y lo que aprendiste.",
     imageUrl: "/images/otro-proyecto.png",
