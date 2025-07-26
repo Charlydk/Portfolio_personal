@@ -6,11 +6,23 @@ import workspaceImage from '../assets/workspace.png'; // <-- 2. Importamos la nu
 import './AnimatedBackground.css';
 
 function AboutMe() {
-  const skills = [
-    'JavaScript', 'React', 'HTML5', 'CSS3', 'Bootstrap',
-    'Python', 'SQL', 'Git', 'GitHub', 'Vite', 'VS Code',
-    'Problem Solving', 'Teamwork', 'Comunicación', 'Aprendizaje Continuo'
-  ];
+  const skillCategories = {
+    "Frontend": [
+      'JavaScript', 'React', 'HTML5', 'CSS3', 'Bootstrap'
+    ],
+    "Backend": [
+      'C#', 'ASP.NET Core', 'Python', 'SignalR'
+    ],
+    "Bases de Datos y Análisis": [
+      'SQL', 'PostgreSQL', 'Power BI', 'Excel', 'VBA'
+    ],
+    "Cloud y DevOps": [
+      'Docker', 'Google Cloud', 'Git', 'GitHub'
+    ],
+    "Herramientas": [
+      'Vite', 'VS Code'
+    ]
+  };
 
   return (
     <section id="about" className="bg-custom-section py-5"> {/* Usamos la clase del fondo gris claro */}
@@ -33,13 +45,32 @@ function AboutMe() {
                 Me considero una persona proactiva, con gran capacidad de autoaprendizaje y un fuerte deseo de seguir creciendo profesionalmente. Disfruto trabajar en equipo y enfrentar nuevos desafíos.
               </p>
             </div>
-
+            
             <h3 className="mt-3 mb-3 text-center">Mis Habilidades</h3>
-            <div className="d-flex flex-wrap justify-content-center ">
-              {skills.map((skill) => (
-                <Badge key={skill} pill bg="primary" className="m-1 p-2 fs-6">
-                  {skill}
-                </Badge>
+            <div className="mt-4">
+              {/* Iteramos sobre el objeto de categorías como antes */}
+              {Object.entries(skillCategories).map(([category, skills]) => (
+                
+                // 1. Creamos una FILA para cada categoría con un margen inferior
+                <Row key={category} className="mb-3 align-items-center">
+                  
+                  {/* 2. Una COLUMNA para el título (ocupa 3 de 12 espacios en pantallas medianas o más grandes) */}
+                  <Col md={3}>
+                    <h5 className="text-md-end text-center fw-bold">{category}</h5>
+                  </Col>
+                  
+                  {/* 3. Otra COLUMNA para las etiquetas (ocupa los 9 espacios restantes) */}
+                  <Col md={9}>
+                    <div className="d-flex flex-wrap justify-content-center justify-content-md-start">
+                      {skills.map((skill) => (
+                        <Badge key={skill} pill bg="primary" className="m-1 p-2 fs-6 fw-normal">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </Col>
+                  
+                </Row>
               ))}
             </div>
 
