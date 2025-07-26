@@ -20,7 +20,7 @@ const projects = [
     technologies: ["JavaScript (Vanilla)", "CSS3", "HTML5", "Responsive Design", "Refactoring"]
   },
   {
-    id: 2, // Un ID único para cada proyecto
+    id: 2,
     title: "Juego del Ahorcado",
     description: "Una aplicación web completa con backend en C# y frontend en JavaScript. Incluye modos de un jugador, versus y un modo multijugador online en tiempo real con SignalR.",
     modalContent: {
@@ -28,13 +28,13 @@ const projects = [
     text: [
       "➡️ **Concepto:** Este proyecto va más allá de un simple juego. El objetivo fue construir una aplicación web full-stack, robusta y escalable, con un backend en ASP.NET Core y un frontend interactivo en Vanilla JavaScript, poniendo especial énfasis en la funcionalidad multijugador en tiempo real.",
       "🛠️ **Desafíos Técnicos:** El principal reto fue la arquitectura del modo online. Implementé **SignalR** para la comunicación por WebSockets, lo que requirió un diseño cuidadoso para gestionar las conexiones, los grupos de jugadores y la sincronización de estados en tiempo real. Otro desafío interesante fue la creación de un servicio (`GameManager`) para manejar múltiples partidas concurrentes en la memoria del servidor y un servicio en segundo plano para la limpieza automática de recursos.",
-      "🤓 **Aprendizajes Clave:** Este proyecto consolidó mis habilidades en todo el ciclo de desarrollo. Profundicé en la creación de APIs con **ASP.NET Core**, la gestión de bases de datos con **Entity Framework**, la implementación de servicios en tiempo real con **SignalR** y el desarrollo de un frontend complejo con **Vanilla JavaScript**. Además, preparé la aplicación para su despliegue con **Docker**, adquiriendo experiencia en prácticas de DevOps."
+      "🤓 **Aprendizajes Clave:** Este proyecto consolidó mis habilidades en todo el ciclo de desarrollo. Profundicé en la creación de APIs con **ASP.NET Core**, la gestión de bases de datos con **Entity Framework**, la implementación de servicios en tiempo real con **SignalR** y el desarrollo de un frontend complejo con **Vanilla JavaScript**. Además, preparé y desplegué la aplicación usando **Docker y Google Cloud Run**, adquiriendo experiencia práctica en el ciclo de vida completo de una aplicación en la nube."
       ]
     },
     imageUrl: `${import.meta.env.BASE_URL}images/hangman-game.png`,
     projectUrl: "https://charlydk.github.io/ahorcado-game/frontend/", // URL a un demo en vivo (si tienes)
     repoUrl: "https://github.com/Charlydk/ahorcado-game.git", // URL a tu repositorio de GitHub
-    technologies: ["C#", "ASP.NET", "SignalR", "JavaScript (Vanilla)", "Bootstrap 5", "Docker"] // Tecnologías usadas, opcional para mostrar en la tarjeta
+    technologies: ["C#", "ASP.NET", "SignalR", "JavaScript", "Docker", "Google Cloud", "PostgreSQL"]
   },
   {
     id: 3,
