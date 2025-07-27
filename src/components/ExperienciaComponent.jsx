@@ -25,18 +25,18 @@ function ExperienciaComponent() {
         <Row className="align-items-center" data-aos="fade-up" data-aos-delay="200">
           
           {/* --- Columna Izquierda: Imagen --- */}
-          <Col xxl={6} className="text-center mb-4 mb-lg-0">
+          <Col xl={6} className="text-center mb-4 mb-lg-0">
             <Image 
               src={professionalPhoto} 
               fluid 
               className="shadow-lg about-me-image"
-              alt="Fabián Bernardino, Supervisor de Workforce"
-              style={{ maxWidth: '600px', height: 'auto' }}
+              alt="Equipo de trabajo Workforce"
+              
             />
           </Col>
 
           {/* --- Columna Derecha: Texto y Habilidades --- */}
-          <Col xxl={6}>
+          <Col xl={6}>
             <div className="text-center text-lg-start mb-4">
               {/* Tu texto ya está integrado aquí */}
               <h3>Supervisor de Workforce | Teleperformance Chile y Argentina</h3>
