@@ -5,10 +5,11 @@
   "type": "module",
   "homepage": "https://charlydk.github.io/Portfolio_personal/",
   "scripts": {
-    "dev": "vite --base=/Portfolio_personal/",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "predeploy": "npm run build", 
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

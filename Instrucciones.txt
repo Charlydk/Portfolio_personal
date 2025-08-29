@@ -15,4 +15,15 @@ Ahora, ejecuta el comando para iniciar el servidor de desarrollo:
 & "C:\Users\bernardino.20\Documents\node-v22.16.0-win-x64\npm.cmd" run dev
 
 
+--------------
 
+** hacer deploy en github pages**
+
+
+
+Instala el paquete gh-pages
+npm install gh-pages --save-dev
+
+
+Despliega
+npm run deploy
