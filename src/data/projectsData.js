@@ -67,8 +67,7 @@ const projects = [
     ]
     },
     imageUrl: `${import.meta.env.BASE_URL}images/Portal_GTR.png`,
-    //projectUrl: "#", // no contendra una demo por ahora
-    videoUrl:"#", //"https://www.youtube.com/embed/UMTvmyg9cEQ", // reesmplaza a la demo
+    videoUrl:"https://youtu.be/uklBd_Zh-Wo",
     repoUrl: "https://github.com/Charlydk/Portal_GTR_Publico.git",
     "technologies": ["FastAPI","Python","React","JavaScript","SQLAlchemy","PostgreSQL","Pydantic","React-Bootstrap","JWT","Render"
   ]
