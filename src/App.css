@@ -2,98 +2,99 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --navy-deep: #001d3d;
+  --navy-corporate: #003566;
+  --grey-text: #333533;
+  --bg-light-corporate: #f8f9fa;
+}
+
 #root {
-  
   text-align: center;
 }
 
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Overrides para un look más profesional/corporativo */
+.text-primary {
+  color: var(--navy-corporate) !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-primary {
+  background-color: var(--navy-corporate) !important;
+  border-color: var(--navy-corporate) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-outline-light:hover {
+  background-color: var(--navy-corporate) !important;
+  border-color: var(--navy-corporate) !important;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.bg-primary {
+  background-color: var(--navy-corporate) !important;
 }
 
 .bg-custom-section {
-  /* Un gris muy claro y suave. Es el mismo que usa Bootstrap para "bg-light". */
-  background-color: #e7ecee; 
+  background-color: var(--bg-light-corporate);
+}
+
+.bg-navy-dark {
+  background-color: var(--navy-deep) !important;
 }
 
 .about-me-image {
   max-width: 350px;
   height: auto;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* <-- AÑADE ESTA LÍNEA */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .about-me-image:hover {
-  transform: scale(1.05) translateY(-10px); /* La escala al 105% Y la mueve 10px hacia arriba */
-  box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2); /* Hacemos la sombra más grande y oscura para realzar el efecto 3D */
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .about-me-text p {
-  font-size: 1.3rem; /* Un poco más grande que el tamaño por defecto */
-  line-height: 1.7;  /* Más espacio entre líneas para que "respire" mejor */
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--grey-text);
+  text-align: justify;
 }
 
 .project-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Definimos el efecto que ocurre al pasar el mouse */
 .project-card:hover {
-  transform: scale(1.03); /* Un zoom sutil del 3% */
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15); /* Una sombra más pronunciada para que "salte" de la página */
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Estilos para la sección de experiencia */
-
 .experiencia-lista {
-  list-style: none; /* Quita los puntos de la lista */
+  list-style: none;
   padding-left: 0;
 }
 
 .experiencia-lista li {
-  margin-bottom: 1rem; /* Añade espacio entre cada logro */
-  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  padding-left: 2rem;
   position: relative;
+  font-size: 1.05rem;
+  color: var(--grey-text);
 }
 
-/* Crea un 'check' personalizado para cada item de la lista */
 .experiencia-lista li::before {
-  content: '✔';
-  color: #0d6efd; /* Color primario de Bootstrap */
+  content: '→';
+  color: var(--navy-corporate);
   position: absolute;
   left: 0;
+  font-weight: bold;
+}
+
+/* Navbar professional look */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }

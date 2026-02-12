@@ -11,12 +11,12 @@ function FooterComponent() {
     // text-white: Texto blanco para contrastar con el fondo oscuro
     // py-4: Padding vertical
     // mt-auto: Para que el footer se "pegue" al fondo si el contenido es corto (usando flexbox en el body/html)
-    <footer className="bg-dark text-white py-2 mt-auto">
+    <footer className="bg-navy-dark text-white py-4 mt-auto">
       <Container>
         <Row className="justify-content-center">
           <Col md={6} className="text-center">
-            <p>&copy; {currentYear} Fabián Bernardino. Todos los derechos reservados.</p>
-            <p>Desarrollado con React y React-Bootstrap.</p>
+            <p className="mb-1">&copy; {currentYear} Fabián Bernardino. Todos los derechos reservados.</p>
+            <p className="small opacity-75">Technical Project Manager | Data-Driven Leader</p>
           </Col>
         </Row>
         <Row className="justify-content-center mt-3">

@@ -1,66 +1,55 @@
 // src/components/AboutMe.jsx
 
 import React from 'react';
-import { Container, Row, Col, Badge, Image } from 'react-bootstrap'; // <-- Importamos Image
-import workspaceImage from '../assets/workspace.png'; // <-- 2. Importamos la nueva imagen
+import { Container, Row, Col, Badge, Image } from 'react-bootstrap';
+import workspaceImage from '../assets/workspace.png';
 import './AnimatedBackground.css';
 
 function AboutMe() {
   const skillCategories = {
-    "Frontend": [
-      'JavaScript', 'React', 'HTML5', 'CSS3', 'Bootstrap'
+    "Gestión y Estrategia": [
+      'SQL (Avanzado)', 'Power BI', 'Scrum', 'Gestión de KPIs', 'Gestión de Stakeholders', 'Metodologías Ágiles (Kanban/Scrum)'
     ],
-    "Backend": [
-      'C#', 'ASP.NET Core', 'Python', 'SignalR'
-    ],
-    "Bases de Datos y Análisis": [
-      'SQL', 'PostgreSQL', 'Power BI', 'Excel', 'VBA'
+    "Desarrollo Técnico": [
+      'Python', 'C#', 'ASP.NET Core', 'JavaScript', 'React', 'FastAPI', 'SignalR'
     ],
     "Cloud y DevOps": [
       'Docker', 'Google Cloud', 'Git', 'GitHub'
     ],
-    "Herramientas": [
-      'Vite', 'VS Code'
+    "Herramientas y Análisis": [
+      'Excel (Avanzado)', 'VBA', 'VS Code'
     ]
   };
 
   return (
-    <section id="about" className="bg-custom-section py-5"> {/* Usamos la clase del fondo gris claro */}
+    <section id="about" className="bg-custom-section py-5">
       <Container>
         <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-down">Sobre Mí</h2>
         
-        {/* Usaremos un layout de dos columnas */}
         <Row className="align-items-center">
 
           {/* --- Columna Izquierda: Texto --- */}
           <Col lg={7} data-aos="fade-right">
-            <div className="about-me-text"> {/* 3. Usamos una clase para controlar el tamaño del texto */}
-              <p className="lead"> {/* La clase 'lead' hace el primer párrafo más grande */}
-                Soy Fabián Bernardino, un desarrollador de software apasionado por la tecnología, con una fuerte inclinación hacia el aprendizaje continuo y la resolución de problemas.
+            <div className="about-me-text">
+              <p className="lead">
+                Líder estratégico con más de 15 años de trayectoria en Teleperformance, especializado en la intersección entre el análisis de datos y la gestión de operaciones.
               </p>
               <p>
-                Mi interés por la programación nació de la fascinación por cómo la lógica y la creatividad pueden combinarse para construir soluciones útiles e innovadoras. A lo largo de mi camino, he desarrollado habilidades en Python y, más recientemente, me he sumergido en el desarrollo web con JavaScript y React.
+                Mi evolución profesional me ha permitido consolidarme como <strong>Team Leader en Workforce Management (WFM)</strong>, donde actúo como el puente clave entre el mundo técnico de los datos (SQL/Power BI) y la ejecución estratégica de equipos bajo metodologías ágiles (Scrum).
               </p>
               <p>
-                Me considero una persona proactiva, con gran capacidad de autoaprendizaje y un fuerte deseo de seguir creciendo profesionalmente. Disfruto trabajar en equipo y enfrentar nuevos desafíos.
+                Me apasiona transformar requerimientos de negocio complejos en soluciones técnicas eficientes. Mi enfoque está centrado en la optimización de procesos y en liderar proyectos que impulsen la productividad a través de decisiones basadas en datos.
               </p>
             </div>
             
-            <h3 className="mt-3 mb-3 text-center">Mis Habilidades</h3>
+            <h3 className="mt-4 mb-3 text-center text-lg-start">Habilidades Clave</h3>
             <div className="mt-4">
-              {/* Iteramos sobre el objeto de categorías como antes */}
               {Object.entries(skillCategories).map(([category, skills]) => (
-                
-                // 1. Creamos una FILA para cada categoría con un margen inferior
                 <Row key={category} className="mb-3 align-items-center">
-                  
-                  {/* 2. Una COLUMNA para el título (ocupa 3 de 12 espacios en pantallas medianas o más grandes) */}
-                  <Col md={3}>
+                  <Col md={4}>
                     <h5 className="text-md-end text-center fw-bold">{category}</h5>
                   </Col>
-                  
-                  {/* 3. Otra COLUMNA para las etiquetas (ocupa los 9 espacios restantes) */}
-                  <Col md={9}>
+                  <Col md={8}>
                     <div className="d-flex flex-wrap justify-content-center justify-content-md-start">
                       {skills.map((skill) => (
                         <Badge key={skill} pill bg="primary" className="m-1 p-2 fs-6 fw-normal">
@@ -69,24 +58,22 @@ function AboutMe() {
                       ))}
                     </div>
                   </Col>
-                  
                 </Row>
               ))}
             </div>
 
           </Col>
 
-          {/* --- Columna Derecha: Imagen y Habilidades --- */}
-          <Col lg={5} data-aos="fade-left" data-aos-delay="200">
+          {/* --- Columna Derecha: Imagen --- */}
+          <Col lg={5} data-aos="fade-left" data-aos-delay="200" className="text-center">
             <Image 
               src={workspaceImage} 
               rounded 
               fluid 
-              className="shadow-lg mb-4 about-me-image "
-              alt="Espacio de trabajo de desarrollo"
-              style={{ maxWidth: '350px', height: 'auto',}} // Asegura que la imagen sea responsiva
+              className="shadow-lg mb-4 about-me-image"
+              alt="Espacio de trabajo de gestión y desarrollo"
+              style={{ maxWidth: '350px', height: 'auto'}}
             />
-            
           </Col>
 
         </Row>

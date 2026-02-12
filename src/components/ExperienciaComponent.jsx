@@ -1,17 +1,14 @@
 // src/components/ExperienciaComponent.jsx
 
 import React from 'react';
-// 1. Asegúrate de importar Image y Badge
 import { Container, Row, Col, Image, Badge } from 'react-bootstrap'; 
-// 2. Importa una foto tuya y guárdala en la carpeta 'assets'
 import professionalPhoto from '../assets/professional-photo.png'; 
 
 function ExperienciaComponent() {
-  // 3. Define tus habilidades blandas aquí
   const softSkills = [
-    'Gestión de Proyectos', 'Liderazgo de Equipos', 'Comunicación Efectiva', 
-    'Resolución de Problemas', 'Análisis de Datos', 'Requerimientos',
-    'Problem Solving', 'Teamwork', 'Comunicación', 'Aprendizaje Continuo'
+    'Liderazgo de Equipos', 'Gestión de Proyectos', 'Gestión de Stakeholders',
+    'Metodologías Ágiles', 'Comunicación Estratégica', 'Resolución de Problemas',
+    'Análisis de Datos', 'Toma de Decisiones', 'Optimización de Procesos', 'Scrum'
   ];
 
   return (
@@ -21,48 +18,42 @@ function ExperienciaComponent() {
           Experiencia Profesional
         </h2>
 
-        {/* --- NUEVA ESTRUCTURA DE DOS COLUMNAS --- */}
         <Row className="align-items-center" data-aos="fade-up" data-aos-delay="200">
           
-          {/* --- Columna Izquierda: Imagen --- */}
-          <Col xl={6} className="text-center mb-4 mb-lg-0">
+          <Col xl={5} className="text-center mb-4 mb-lg-0">
             <Image 
               src={professionalPhoto} 
               fluid 
               className="shadow-lg about-me-image"
-              alt="Equipo de trabajo Workforce"
-              
+              alt="Fabián Bernardino - Liderazgo en Teleperformance"
+              style={{ borderRadius: '15px' }}
             />
           </Col>
 
-          {/* --- Columna Derecha: Texto y Habilidades --- */}
-          <Col xl={6}>
+          <Col xl={7}>
             <div className="text-center text-lg-start mb-4">
-              {/* Tu texto ya está integrado aquí */}
-              <h3>Supervisor de Workforce | Teleperformance Chile y Argentina</h3>
-              <p className="text-muted">Julio 2022 – Presente | +3 años</p>
+              <h3>Team Leader / Supervisor de WFM | Teleperformance</h3>
+              <p className="text-muted">2009 – Presente | +15 años de trayectoria estratégica</p>
             </div>
 
             <p className="lead">
-              Como supervisor del área de Workforce, lidero el monitoreo en tiempo real y la optimización de operaciones. Mi rol combina la gestión de equipos con el desarrollo de soluciones técnicas para mejorar la eficiencia y analizar métricas clave del negocio.
+              Lidero la evolución operativa y tecnológica en Teleperformance, transformando procesos complejos en ecosistemas eficientes basados en datos. Mi trayectoria de más de 15 años me ha permitido transitar desde la operación directa hasta el liderazgo estratégico de equipos y proyectos técnicos en Workforce Management.
             </p>
 
             <h4 className="mt-4 text-center text-lg-start">Logros y Proyectos Destacados</h4>
-            {/* Tu lista de logros ya está integrada aquí */}
             <ul className="experiencia-lista mt-3">
               <li>
-                <strong>Automatización de Reportes con Python:</strong> Desarrollo de scripts para automatizar la recolección y procesamiento de métricas operativas, reduciendo significativamente el tiempo de generación de informes.
+                <strong>Liderazgo Estratégico:</strong> Dirección de equipos de alto rendimiento en WFM, optimizando la productividad y garantizando el cumplimiento de KPIs críticos del negocio.
               </li>
               <li>
-                <strong>Análisis de Datos y Visualización:</strong> Uso de librerías como Pandas para analizar grandes volúmenes de datos y crear visualizaciones en Excel que ayudan a la toma de decisiones estratégicas.
+                <strong>Automatización de Impacto (Portal GTR):</strong> Desarrollo de soluciones que automatizaron el flujo de reportes operacionales, logrando una reducción del 30% en el tiempo de análisis y facilitando la toma de decisiones inmediata.
               </li>
               <li>
-                <strong>Desarrollo de Requerimientos:</strong> Conducción de reuniones con clientes internos y externos para identificar necesidades y traducir requerimientos de negocio a soluciones técnicas funcionales.
+                <strong>Gestión de Stakeholders y Datos:</strong> Especialista en traducir necesidades de negocio en requerimientos técnicos funcionales, utilizando SQL y Power BI para proporcionar visibilidad accionable a nivel ejecutivo.
               </li>
             </ul>
 
-            <h4 className="mt-4 text-center">Habilidades Blandas</h4>
-            {/* Las etiquetas de habilidades blandas que querías */}
+            <h4 className="mt-4 text-center text-lg-start">Habilidades de Gestión</h4>
             <div className="d-flex flex-wrap justify-content-center justify-content-lg-start mt-3">
               {softSkills.map((skill) => (
                 <Badge key={skill} pill bg="primary" className="m-1 p-2 fs-6">

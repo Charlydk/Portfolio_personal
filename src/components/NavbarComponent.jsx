@@ -14,7 +14,7 @@ const NavbarComponent = () => {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top" expanded={expanded}> {/* <-- Vincula el estado 'expanded' aquí */}
+    <Navbar bg="white" variant="light" expand="lg" fixed="top" expanded={expanded} className="navbar"> {/* <-- Vincula el estado 'expanded' aquí */}
       <Container>
         <Navbar.Brand href="#home">
           <img

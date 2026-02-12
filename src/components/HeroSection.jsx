@@ -19,7 +19,7 @@ function HeroSection() {
             {/* img-fluid: Hace la imagen responsiva. rounded-circle: La hace circular. */}
             <img
               src={myProfileImage}
-              alt="foto de perfil de Fabián Bernardino - Desarrollador Full Stack"
+              alt="foto de perfil de Fabián Bernardino - Technical Project Manager"
               className="img-fluid rounded-circle shadow-lg" // shadow-lg añade una sombra
               style={{ maxWidth: '300px', height: 'auto' }} // Controla el tamaño máximo
             />
@@ -27,12 +27,12 @@ function HeroSection() {
           <Col xs={12} md={6} className="order-md-1"> {/* Ordenamos el texto para que vaya a la izquierda en md+ */}
             {/* Título principal */}
             <h1 className="display-4 fw-bold mb-3" data-aos="fade-up">
-              ¡Hola, soy <span className="text-primary">Fabián Bernardino</span>!
+              Technical Project Manager | <span className="text-primary">Data-Driven Leader</span>
             </h1>
             {/* Subtítulo/Eslogan */}
             <p className="lead mb-4" data-aos="fade-up" data-aos-delay="200">
-              Desarrollador de software apasionado por crear soluciones y construir experiencias interactivas.
-              Actualmente explorando el mundo de **React**, **Python** y **C#**.
+              Líder con +15 años de trayectoria transformando datos en decisiones estratégicas.
+              Especialista en optimización de operaciones y gestión de equipos bajo metodologías ágiles.
             </p>
             {/* Botones de acción */}
             <div data-aos="fade-up" data-aos-delay="400">

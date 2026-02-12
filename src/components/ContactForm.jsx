@@ -82,10 +82,10 @@ const [isSubmitting, setIsSubmitting] = useState(false);
   return (
     <section id="contact" className="py-5 bg-custom-section">
       <Container>
-        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="zoom-in-right">Contacto </h2>
-        <p className="text-center lead mb-4" data-aos="zoom-in-right">¿Tienes alguna pregunta o quieres colaborar? ¡Contáctame!</p>
+        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-up">Contacto </h2>
+        <p className="text-center lead mb-4" data-aos="fade-up">¿Tienes alguna pregunta o quieres colaborar? ¡Contáctame!</p>
 
-        <Row className="justify-content-center" data-aos="zoom-in-right">
+        <Row className="justify-content-center" data-aos="fade-up">
           <Col md={8} lg={6}>
             <div className="p-4 border rounded shadow-sm bg-white">
                 
