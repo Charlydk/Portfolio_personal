@@ -1,10 +1,16 @@
 // src/components/ProjectCard.jsx
 
 import React from 'react';
-import { Card, Button, Modal, Badge, Ratio } from 'react-bootstrap';
+import { Card, Button, Modal, Badge, Ratio, Carousel } from 'react-bootstrap';
 
 function ProjectCard({ project, onShowModal }) {
-  const { title, description, imageUrl, projectUrl, repoUrl, modalContent, technologies, videoUrl } = project;
+  const { title, description, imageUrl, projectUrl, repoUrl, modalContent, technologies, videoUrl, badge } = project;
+
+  const badgeBg = badge?.includes('producción') ? 'success'
+    : badge?.includes('desarrollo') ? 'warning'
+    : badge?.includes('Demo') ? 'info'
+    : badge?.includes('Finalizado') ? 'primary'
+    : 'secondary';
 
   return (
     <Card className="h-100 shadow-sm project-card">
@@ -17,6 +23,11 @@ function ProjectCard({ project, onShowModal }) {
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title>{title}</Card.Title>
+        {badge && (
+          <Badge bg={badgeBg} className="mb-2 align-self-start">
+            {badge}
+          </Badge>
+        )}
         <Card.Text className="flex-grow-1">
           {description}
         </Card.Text>
@@ -56,19 +67,25 @@ function ProjectCard({ project, onShowModal }) {
 
           {/* --- FIN DE LA LÓGICA CORREGIDA --- */}
           
-          <Button variant="outline-secondary" href={repoUrl} target="_blank" rel="noopener noreferrer" className="w-100">
-            Ver Repositorio
-          </Button>
+          {/* Sin repoUrl = repositorio privado (proyecto de cliente o de negocio). */}
+          {repoUrl ? (
+            <Button variant="outline-secondary" href={repoUrl} target="_blank" rel="noopener noreferrer" className="w-100">
+              Ver Repositorio
+            </Button>
+          ) : (
+            <Button variant="outline-secondary" className="w-100" disabled>
+              Repositorio Privado
+            </Button>
+          )}
         </div>
       </Card.Body>
     </Card>
   );
 }
 
-// El Modal del proyecto no necesita cambios.
 ProjectCard.Modal = function ProjectModal({ show, onHide, project }) {
   if (!project) return null;
-  const { title, modalContent, videoUrl } = project;
+  const { title, modalContent, videoUrl, gallery } = project;
   const modalTitle = videoUrl ? `Video Demo: ${title}` : (modalContent?.title || title);
 
   return (
@@ -86,6 +103,21 @@ ProjectCard.Modal = function ProjectModal({ show, onHide, project }) {
               allowFullScreen
             ></iframe>
           </Ratio>
+        )}
+        {gallery?.length > 0 && (
+          <Carousel variant="dark" interval={null} className="mb-4">
+            {gallery.map(({ src, caption }) => (
+              <Carousel.Item key={src}>
+                <img
+                  src={src}
+                  alt={caption}
+                  className="d-block w-100 bg-light rounded"
+                  style={{ height: '60vh', objectFit: 'contain' }}
+                />
+                <p className="text-center small text-muted mt-2 mb-4">{caption}</p>
+              </Carousel.Item>
+            ))}
+          </Carousel>
         )}
         {modalContent?.text.map((paragraph, index) => (
           <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
