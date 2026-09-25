@@ -1,16 +1,40 @@
-// src/components/ExperienciaComponent.jsx
-
 import React from 'react';
-import { Container, Row, Col, Image, Badge } from 'react-bootstrap'; 
-import professionalPhoto from '../assets/professional-photo.png'; 
+import { Container, Row, Col, Badge } from 'react-bootstrap';
+
+const experiences = [
+  {
+    period: "2021 – Actualidad",
+    role: "WFM Team Leader (GTR)",
+    company: "Teleperformance",
+    description: "Desarrollo del Portal GTR (Python + React), automatización de reportes con reducción del 30% en tiempos, dashboards en Power BI y flujos AI-augmented con Claude Code."
+  },
+  {
+    period: "Sep 2010 – 2021",
+    role: "Analista de Workforce Management",
+    company: "Teleperformance",
+    description: "Planificación de recursos humanos para SLAs operativos, análisis de métricas de call center, automatización con Python y VBA."
+  },
+  {
+    period: "2008 – 2010",
+    role: "Supervisor de Agentes",
+    company: "Teleperformance",
+    description: "Liderazgo de equipos operativos de atención al cliente, seguimiento de KPIs y performance individual."
+  },
+  {
+    period: "2023 – Actualidad",
+    role: "Fundador y Desarrollador Web",
+    company: "FX Estudio",
+    description: "Plataforma de invitaciones digitales en producción con clientes reales, sitio de FM País 101.1 y sitio de FM Okey. Gestión de cada proyecto de punta a punta: relevamiento con el cliente, desarrollo y despliegue."
+  }
+];
+
+const softSkills = [
+  'Liderazgo de Equipos', 'Gestión de Proyectos', 'Metodologías Ágiles',
+  'Comunicación Estratégica', 'Resolución de Problemas', 'Análisis de Datos',
+  'Toma de Decisiones', 'AI-Augmented Development'
+];
 
 function ExperienciaComponent() {
-  const softSkills = [
-    'Liderazgo de Equipos', 'Gestión de Proyectos', 'Gestión de Stakeholders',
-    'Metodologías Ágiles', 'Comunicación Estratégica', 'Resolución de Problemas',
-    'Análisis de Datos', 'Toma de Decisiones', 'Optimización de Procesos', 'Scrum'
-  ];
-
   return (
     <section id="experiencia" className="bg-custom-section py-5">
       <Container>
@@ -18,43 +42,36 @@ function ExperienciaComponent() {
           Experiencia Profesional
         </h2>
 
-        <Row className="align-items-center" data-aos="fade-up" data-aos-delay="200">
-          
-          <Col xl={5} className="text-center mb-4 mb-lg-0">
-            <Image 
-              src={professionalPhoto} 
-              fluid 
-              className="shadow-lg about-me-image"
-              alt="Fabián Bernardino - Liderazgo en Teleperformance"
-              style={{ borderRadius: '15px' }}
-            />
+        <Row className="justify-content-center">
+          <Col lg={8} data-aos="fade-up" data-aos-delay="100">
+            {experiences.map((exp, index) => (
+              <Row key={index} className="mb-4 flex-nowrap">
+                <Col xs="auto" className="d-flex flex-column align-items-center pe-0">
+                  <div
+                    style={{
+                      width: 14, height: 14, minHeight: 14,
+                      background: '#0d6efd', borderRadius: '50%', marginTop: '4px', flexShrink: 0
+                    }}
+                  />
+                  {index < experiences.length - 1 && (
+                    <div style={{ width: 2, flex: 1, background: '#dee2e6', minHeight: 40, marginTop: 4 }} />
+                  )}
+                </Col>
+                <Col style={{ paddingBottom: '0.5rem' }}>
+                  <p className="text-muted small mb-1">{exp.period}</p>
+                  <h5 className="mb-0">{exp.role}</h5>
+                  <p className="text-primary mb-1"><em>{exp.company}</em></p>
+                  <p className="text-muted mb-0">{exp.description}</p>
+                </Col>
+              </Row>
+            ))}
           </Col>
+        </Row>
 
-          <Col xl={7}>
-            <div className="text-center text-lg-start mb-4">
-              <h3>Team Leader / Supervisor de WFM | Teleperformance</h3>
-              <p className="text-muted">2009 – Presente | +15 años de trayectoria estratégica</p>
-            </div>
-
-            <p className="lead">
-              Lidero la evolución operativa y tecnológica en Teleperformance, transformando procesos complejos en ecosistemas eficientes basados en datos. Mi trayectoria de más de 15 años me ha permitido transitar desde la operación directa hasta el liderazgo estratégico de equipos y proyectos técnicos en Workforce Management.
-            </p>
-
-            <h4 className="mt-4 text-center text-lg-start">Logros y Proyectos Destacados</h4>
-            <ul className="experiencia-lista mt-3">
-              <li>
-                <strong>Liderazgo Estratégico:</strong> Dirección de equipos de alto rendimiento en WFM, optimizando la productividad y garantizando el cumplimiento de KPIs críticos del negocio.
-              </li>
-              <li>
-                <strong>Automatización de Impacto (Portal GTR):</strong> Desarrollo de soluciones que automatizaron el flujo de reportes operacionales, logrando una reducción del 30% en el tiempo de análisis y facilitando la toma de decisiones inmediata.
-              </li>
-              <li>
-                <strong>Gestión de Stakeholders y Datos:</strong> Especialista en traducir necesidades de negocio en requerimientos técnicos funcionales, utilizando SQL y Power BI para proporcionar visibilidad accionable a nivel ejecutivo.
-              </li>
-            </ul>
-
-            <h4 className="mt-4 text-center text-lg-start">Habilidades de Gestión</h4>
-            <div className="d-flex flex-wrap justify-content-center justify-content-lg-start mt-3">
+        <Row className="justify-content-center mt-3">
+          <Col lg={8} data-aos="fade-up" data-aos-delay="200">
+            <h4 className="text-center mb-3">Habilidades de Gestión</h4>
+            <div className="d-flex flex-wrap justify-content-center">
               {softSkills.map((skill) => (
                 <Badge key={skill} pill bg="primary" className="m-1 p-2 fs-6">
                   {skill}

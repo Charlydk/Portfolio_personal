@@ -34,6 +34,7 @@ const NavbarComponent = () => {
             <Nav.Link href="#home" onClick={handleNavLinkClick}>Inicio</Nav.Link>
             <Nav.Link href="#about" onClick={handleNavLinkClick}>Sobre Mí</Nav.Link>
             <Nav.Link href="#projects" onClick={handleNavLinkClick}>Proyectos</Nav.Link>
+            <Nav.Link href="#experiencia" onClick={handleNavLinkClick}>Experiencia</Nav.Link>
             <Nav.Link href="#contact" onClick={handleNavLinkClick}>Contacto</Nav.Link>
           </Nav>
         </Navbar.Collapse>

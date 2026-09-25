@@ -1,5 +1,3 @@
-// src/components/AboutMe.jsx
-
 import React from 'react';
 import { Container, Row, Col, Badge, Image } from 'react-bootstrap';
 import workspaceImage from '../assets/workspace.png';
@@ -7,43 +5,49 @@ import './AnimatedBackground.css';
 
 function AboutMe() {
   const skillCategories = {
-    "Gestión y Estrategia": [
-      'SQL (Avanzado)', 'Power BI', 'Scrum', 'Gestión de KPIs', 'Gestión de Stakeholders', 'Metodologías Ágiles (Kanban/Scrum)'
-    ],
-    "Desarrollo Técnico": [
-      'Python', 'C#', 'ASP.NET Core', 'JavaScript', 'React', 'FastAPI', 'SignalR'
-    ],
-    "Cloud y DevOps": [
-      'Docker', 'Google Cloud', 'Git', 'GitHub'
-    ],
-    "Herramientas y Análisis": [
-      'Excel (Avanzado)', 'VBA', 'VS Code'
-    ]
+    "Backend": ['Python', 'FastAPI', 'C#', 'ASP.NET Core', 'SignalR', 'SQLAlchemy', 'JWT'],
+    "Frontend": ['React', 'TypeScript', 'JavaScript', 'Astro', 'Vite', 'Bootstrap', 'Tailwind CSS'],
+    "Datos & BI": ['PostgreSQL', 'Supabase', 'SQL', 'Power BI', 'VBA', 'Excel'],
+    "Cloud & DevOps": ['Docker', 'Google Cloud', 'Render', 'Netlify', 'Git', 'GitHub']
   };
+
+  const quickFacts = [
+    { icon: '📍', text: 'Tucumán, Argentina' },
+    { icon: '💼', text: 'Presencial y Remoto LATAM' },
+    { icon: '🎓', text: 'Técnico Superior en Desarrollo de Software' },
+    { icon: '🌐', text: 'Inglés: Intermedio (lectura técnica fluida)' },
+  ];
 
   return (
     <section id="about" className="bg-custom-section py-5">
       <Container>
         <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-down">Sobre Mí</h2>
-        
-        <Row className="align-items-center">
 
-          {/* --- Columna Izquierda: Texto --- */}
+        <Row className="align-items-center">
           <Col lg={7} data-aos="fade-right">
             <div className="about-me-text">
-              <p className="lead">
-                Líder estratégico con más de 15 años de trayectoria en Teleperformance, especializado en la intersección entre el análisis de datos y la gestión de operaciones.
+              <p>
+                Soy desarrollador Fullstack (Python y React) con más de 15 años en operaciones de contact center en Teleperformance. Pasé de Supervisor a Analista WFM y hoy soy Team Leader del área GTR: conozco los problemas de la operación desde adentro, y construí y desplegué el Portal GTR para resolverlos en producción.
               </p>
               <p>
-                Mi evolución profesional me ha permitido consolidarme como <strong>Team Leader en Workforce Management (WFM)</strong>, donde actúo como el puente clave entre el mundo técnico de los datos (SQL/Power BI) y la ejecución estratégica de equipos bajo metodologías ágiles (Scrum).
+                Además fundé FX Estudio, donde llevo proyectos web con clientes reales de punta a punta, desde el relevamiento de necesidades hasta la puesta en producción. De ahí salieron la plataforma de invitaciones digitales y el nuevo sitio de FM País.
               </p>
               <p>
-                Me apasiona transformar requerimientos de negocio complejos en soluciones técnicas eficientes. Mi enfoque está centrado en la optimización de procesos y en liderar proyectos que impulsen la productividad a través de decisiones basadas en datos.
+                Trabajo con flujos de desarrollo asistido por IA (AI-augmented development), que me permiten iterar rápido sin perder el foco en el problema. Busco un rol donde pueda combinar liderazgo técnico, gestión de proyectos y desarrollo. Disponible presencial en Tucumán o remoto para LATAM.
               </p>
             </div>
-            
+
+            <div className="mt-4 d-flex flex-wrap gap-3">
+              {quickFacts.map((fact, i) => (
+                <span key={i} className="d-flex align-items-center gap-1 small">
+                  <span>{fact.icon}</span>
+                  <span>{fact.text}</span>
+                </span>
+              ))}
+            </div>
+
             <h3 className="mt-4 mb-3 text-center text-lg-start">Habilidades Clave</h3>
-            <div className="mt-4">
+            <div className="mt-2">
               {Object.entries(skillCategories).map(([category, skills]) => (
                 <Row key={category} className="mb-3 align-items-center">
                   <Col md={4}>
@@ -61,21 +65,18 @@ function AboutMe() {
                 </Row>
               ))}
             </div>
-
           </Col>
 
-          {/* --- Columna Derecha: Imagen --- */}
           <Col lg={5} data-aos="fade-left" data-aos-delay="200" className="text-center">
-            <Image 
-              src={workspaceImage} 
-              rounded 
-              fluid 
+            <Image
+              src={workspaceImage}
+              rounded
+              fluid
               className="shadow-lg mb-4 about-me-image"
-              alt="Espacio de trabajo de gestión y desarrollo"
-              style={{ maxWidth: '350px', height: 'auto'}}
+              alt="Espacio de trabajo de desarrollo"
+              style={{ maxWidth: '350px', height: 'auto' }}
             />
           </Col>
-
         </Row>
       </Container>
     </section>

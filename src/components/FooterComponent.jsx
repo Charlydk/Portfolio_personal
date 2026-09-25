@@ -15,8 +15,8 @@ function FooterComponent() {
       <Container>
         <Row className="justify-content-center">
           <Col md={6} className="text-center">
-            <p className="mb-1">&copy; {currentYear} Fabián Bernardino. Todos los derechos reservados.</p>
-            <p className="small opacity-75">Technical Project Manager | Data-Driven Leader</p>
+            <p className="mb-1">Desarrollado con React + Vite por Fabián Bernardino &copy; {currentYear}</p>
+            <p className="small opacity-75">Fullstack Developer & Technical Lead</p>
           </Col>
         </Row>
         <Row className="justify-content-center mt-3">
