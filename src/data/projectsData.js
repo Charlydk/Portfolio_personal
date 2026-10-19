@@ -80,7 +80,6 @@ const projects = [
     // TODO: reemplazar con screenshot real
     imageUrl: `${import.meta.env.BASE_URL}images/portal-tarjetas.png`,
     projectUrl: "https://fxestudio.com.ar/",
-    repoUrl: "https://github.com/Charlydk/Portal_tarjetas_invitaciones",
     technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Netlify", "Brevo", "Framer Motion"],
     badge: "En producción ✓"
   },

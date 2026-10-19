@@ -3,6 +3,12 @@ import { Container, Row, Col, Badge } from 'react-bootstrap';
 
 const experiences = [
   {
+    period: "2026 – Actualidad",
+    role: "Fundador y Desarrollador Web",
+    company: "FX Estudio",
+    description: "Productos propios en producción: plataforma de invitaciones digitales y menú digital con QR para bares. Sitios y tiendas online para clientes como FM País 101.1, FM Okey, C&L Indumentaria y Ximena Accesorios. Gestión de cada proyecto de punta a punta: relevamiento con el cliente, desarrollo, despliegue y soporte."
+  },
+  {
     period: "2021 – Actualidad",
     role: "WFM Team Leader (GTR)",
     company: "Teleperformance",
@@ -19,12 +25,6 @@ const experiences = [
     role: "Supervisor de Agentes",
     company: "Teleperformance",
     description: "Liderazgo de equipos operativos de atención al cliente, seguimiento de KPIs y performance individual."
-  },
-  {
-    period: "2023 – Actualidad",
-    role: "Fundador y Desarrollador Web",
-    company: "FX Estudio",
-    description: "Productos propios en producción: plataforma de invitaciones digitales y menú digital con QR para bares. Sitios y tiendas online para clientes como FM País 101.1, FM Okey, C&L Indumentaria y Ximena Accesorios. Gestión de cada proyecto de punta a punta: relevamiento con el cliente, desarrollo, despliegue y soporte."
   }
 ];
 
