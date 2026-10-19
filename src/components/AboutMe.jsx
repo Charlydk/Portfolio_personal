@@ -74,7 +74,6 @@ function AboutMe() {
               fluid
               className="shadow-lg mb-4 about-me-image"
               alt="Fabián Bernardino"
-              style={{ maxWidth: '350px', height: 'auto' }}
             />
           </Col>
         </Row>
