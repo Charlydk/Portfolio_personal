@@ -6,9 +6,9 @@ import './AnimatedBackground.css';
 function AboutMe() {
   const skillCategories = {
     "Backend": ['Python', 'FastAPI', 'C#', 'ASP.NET Core', 'SignalR', 'SQLAlchemy', 'JWT'],
-    "Frontend": ['React', 'TypeScript', 'JavaScript', 'Astro', 'Vite', 'Bootstrap', 'Tailwind CSS'],
+    "Frontend": ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Astro', 'Vite', 'Bootstrap', 'Tailwind CSS'],
     "Datos & BI": ['PostgreSQL', 'Supabase', 'SQL', 'Power BI', 'VBA', 'Excel'],
-    "Cloud & DevOps": ['Docker', 'Google Cloud', 'Render', 'Netlify', 'Git', 'GitHub']
+    "Cloud & DevOps": ['Docker', 'Google Cloud', 'Render', 'Netlify', 'Vercel', 'Git', 'GitHub']
   };
 
   const quickFacts = [
@@ -21,16 +21,16 @@ function AboutMe() {
   return (
     <section id="about" className="bg-custom-section py-5">
       <Container>
-        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-down">Sobre Mí</h2>
+        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-up">Sobre Mí</h2>
 
         <Row className="align-items-center">
-          <Col lg={7} data-aos="fade-right">
+          <Col lg={7} data-aos="fade-up">
             <div className="about-me-text">
               <p>
                 Soy desarrollador Fullstack (Python y React) con más de 15 años en operaciones de contact center en Teleperformance. Pasé de Supervisor a Analista WFM y hoy soy Team Leader del área GTR: conozco los problemas de la operación desde adentro, y construí y desplegué el Portal GTR para resolverlos en producción.
               </p>
               <p>
-                Además fundé FX Estudio, donde llevo proyectos web con clientes reales de punta a punta, desde el relevamiento de necesidades hasta la puesta en producción. De ahí salieron la plataforma de invitaciones digitales y el nuevo sitio de FM País.
+                Además fundé FX Estudio, donde llevo proyectos web con clientes reales de punta a punta, desde el relevamiento de necesidades hasta la puesta en producción. De ahí salieron la plataforma de invitaciones digitales, el menú digital con QR para bares, tiendas online para comercios locales y el nuevo sitio de FM País.
               </p>
               <p>
                 Trabajo con flujos de desarrollo asistido por IA (AI-augmented development), que me permiten iterar rápido sin perder el foco en el problema. Busco un rol donde pueda combinar liderazgo técnico, gestión de proyectos y desarrollo. Disponible presencial en Tucumán o remoto para LATAM.
@@ -67,13 +67,13 @@ function AboutMe() {
             </div>
           </Col>
 
-          <Col lg={5} data-aos="fade-left" data-aos-delay="200" className="text-center">
+          <Col lg={5} data-aos="fade-up" data-aos-delay="150" className="text-center">
             <Image
               src={workspaceImage}
               rounded
               fluid
               className="shadow-lg mb-4 about-me-image"
-              alt="Espacio de trabajo de desarrollo"
+              alt="Fabián Bernardino"
               style={{ maxWidth: '350px', height: 'auto' }}
             />
           </Col>

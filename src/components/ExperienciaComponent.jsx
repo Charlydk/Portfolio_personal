@@ -24,7 +24,7 @@ const experiences = [
     period: "2023 – Actualidad",
     role: "Fundador y Desarrollador Web",
     company: "FX Estudio",
-    description: "Plataforma de invitaciones digitales en producción con clientes reales, sitio de FM País 101.1 y sitio de FM Okey. Gestión de cada proyecto de punta a punta: relevamiento con el cliente, desarrollo y despliegue."
+    description: "Productos propios en producción: plataforma de invitaciones digitales y menú digital con QR para bares. Sitios y tiendas online para clientes como FM País 101.1, FM Okey, C&L Indumentaria y Ximena Accesorios. Gestión de cada proyecto de punta a punta: relevamiento con el cliente, desarrollo, despliegue y soporte."
   }
 ];
 
@@ -36,7 +36,7 @@ const softSkills = [
 
 function ExperienciaComponent() {
   return (
-    <section id="experiencia" className="bg-custom-section py-5">
+    <section id="experiencia" className="bg-white py-5">
       <Container>
         <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-up">
           Experiencia Profesional

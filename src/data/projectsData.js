@@ -11,7 +11,7 @@ const projects = [
         "🤓 <strong>Stack técnico:</strong> Backend con FastAPI (Python) + React en el frontend. Integración con APIs externas (GeoVictoria). Desplegado en Render con base de datos en Supabase."
       ]
     },
-    imageUrl: `${import.meta.env.BASE_URL}images/Portal_GTR.png`,
+    imageUrl: `${import.meta.env.BASE_URL}images/portal_GTR_hhee_metricas.png`,
     gallery: [
       {
         src: `${import.meta.env.BASE_URL}images/portal_GTR_Dashboard.png`,
@@ -68,41 +68,85 @@ const projects = [
   {
     id: 2,
     title: "FX Estudio — Invitaciones Web",
-    description: "Plataforma propia de invitaciones digitales para bodas, 15 años y eventos. El cliente elige un diseño, lo personaliza con vista previa en vivo y recibe su tarjeta con confirmación de asistencia.",
+    description: "Plataforma propia de invitaciones digitales para bodas, 15 años y eventos corporativos. El cliente personaliza su tarjeta con vista previa en vivo y gestiona invitados, confirmaciones y envíos por mail.",
     modalContent: {
       title: "FX Estudio — Plataforma de Invitaciones Digitales",
       text: [
-        "➡️ <strong>Concepto:</strong> Producto propio de FX Estudio: catálogo de diseños con vista previa, editor paso a paso con preview en vivo y tarjetas publicadas con URL propia, confirmación de asistencia (RSVP) y lista de invitados con links personalizados.",
-        "🛠️ <strong>Estado:</strong> En producción con clientes reales. El flujo de venta termina en WhatsApp y un panel de administración gestiona los pedidos.",
-        "🤓 <strong>Stack técnico:</strong> React 19 + Vite con React Router y Framer Motion. Supabase (PostgreSQL + Storage) para tarjetas, confirmaciones y panel admin. Netlify Edge Functions para la vista previa de cada tarjeta al compartirla por WhatsApp."
+        "➡️ <strong>Concepto:</strong> Producto propio de FX Estudio: catálogo de diseños con vista previa, editor paso a paso con preview en vivo y tarjetas publicadas con URL propia. Incluye eventos corporativos con logo de la empresa, confirmación de asistencia (RSVP) y lista de invitados con links personalizados.",
+        "🛠️ <strong>Estado:</strong> En producción con clientes reales. Gestión de invitados con restricciones alimentarias, filtros y exportación a Excel, envío masivo de invitaciones por mail con Brevo y un panel de administración con filtros por estado, archivo y cuenta regresiva al evento.",
+        "🤓 <strong>Stack técnico:</strong> React 19 + Vite con React Router y Framer Motion. Supabase (PostgreSQL + Storage) para tarjetas, invitados y panel admin. Netlify Edge Functions para la vista previa de cada tarjeta al compartirla por WhatsApp."
       ]
     },
     // TODO: reemplazar con screenshot real
     imageUrl: `${import.meta.env.BASE_URL}images/portal-tarjetas.png`,
     projectUrl: "https://fxestudio.com.ar/",
     repoUrl: "https://github.com/Charlydk/Portal_tarjetas_invitaciones",
-    technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Netlify", "Framer Motion"],
+    technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Netlify", "Brevo", "Framer Motion"],
     badge: "En producción ✓"
   },
   {
     id: 3,
-    title: "FM País 101.1 — Sitio Web",
-    description: "Nuevo sitio web para la radio FM País 101.1 (Aguilares, Tucumán), en reemplazo del sitio WordPress actual. Incluye reproductor de streaming en vivo persistente y grilla de programación.",
+    title: "FX Estudio — Menú Digital QR",
+    description: "Plataforma de menús digitales con QR para bares: cada local tiene su carta online con diseño propio y un panel para actualizar precios y productos desde el celular.",
     modalContent: {
-      title: "FM País 101.1 — Rediseño Web",
+      title: "FX Estudio — Menú Digital QR para Bares",
       text: [
-        "➡️ <strong>Concepto:</strong> Sitio multipágina para la radio FM País 101.1, con reproductor de streaming en vivo persistente entre navegaciones, grilla de programación con horario en vivo calculado en tiempo real y enlace directo de WhatsApp.",
-        "🛠️ <strong>Estado:</strong> Desarrollo completo por FX Estudio. Demo funcional publicada en Netlify; solo resta la migración al dominio definitivo de la radio.",
-        "🤓 <strong>Stack técnico:</strong> Astro + TypeScript con ClientRouter para persistir el reproductor de audio entre páginas. Desplegado en Netlify."
+        "➡️ <strong>Concepto:</strong> Producto multi-cliente de FX Estudio. Cada bar obtiene una carta pública con su propio enlace y código QR, a elegir entre tres plantillas de diseño. El dueño administra productos, categorías, fotos, apariencia y pedidos desde su panel, y el plan superior suma un carrito que envía el pedido por WhatsApp.",
+        "🛠️ <strong>Estado:</strong> En producción, con bares de demostración públicos, paquetes de precios, plan de mantenimiento y herramientas internas para dar de alta y dar soporte a cada cliente.",
+        "🤓 <strong>Stack técnico:</strong> Next.js (App Router) + Supabase (autenticación, PostgreSQL y Storage para las fotos). Desplegado en Netlify."
       ]
     },
-    imageUrl: `${import.meta.env.BASE_URL}images/radiofmpais.png`,
-    projectUrl: "https://fmpais-demo.netlify.app/",
-    technologies: ["Astro", "TypeScript", "Vitest", "Netlify"],
-    badge: "Demo disponible"
+    imageUrl: `${import.meta.env.BASE_URL}images/menu-digital.jpg`,
+    projectUrl: "https://menu.fxestudio.com.ar/",
+    technologies: ["Next.js", "React", "Supabase", "PostgreSQL", "Netlify"],
+    badge: "En producción ✓"
   },
   {
     id: 4,
+    title: "FX Estudio — Sitios Web para Pymes",
+    description: "Línea de sitios web para comercios y pymes: tiendas online con panel de administración para clientes reales, además del sitio comercial de la propia línea.",
+    modalContent: {
+      title: "FX Estudio — Sitios Web para Pymes",
+      text: [
+        "➡️ <strong>Concepto:</strong> Segunda línea de negocio de FX Estudio: sitios web a precio accesible con acompañamiento después de la entrega. Incluye el sitio comercial con paquetes y precios, y tiendas online para clientes como <a href=\"https://cylindumentaria.vercel.app/\" target=\"_blank\" rel=\"noopener noreferrer\">C&amp;L Indumentaria</a> y <a href=\"https://www.ximenaaccesorios.com.ar/\" target=\"_blank\" rel=\"noopener noreferrer\">Ximena Accesorios</a>.",
+        "🛠️ <strong>Estado:</strong> En producción con clientes reales. Cada tienda tiene catálogo con filtros, carrusel de banners, carrito y un panel para que el cliente gestione productos, categorías, banners y promociones por su cuenta.",
+        "🤓 <strong>Stack técnico:</strong> Tiendas en Next.js + Supabase, con compresión de imágenes en el navegador y contacto por WhatsApp. Sitio comercial en Astro + TypeScript, desplegado en Netlify."
+      ]
+    },
+    imageUrl: `${import.meta.env.BASE_URL}images/fxestudio-web.png`,
+    gallery: [
+      {
+        src: `${import.meta.env.BASE_URL}images/cyl-indumentaria.png`,
+        caption: "C&L Indumentaria: tienda online con carrusel de colecciones, promociones y carrito."
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/ximena-accesorios.png`,
+        caption: "Ximena Accesorios: catálogo con dominio propio, banners y colecciones destacadas."
+      }
+    ],
+    projectUrl: "https://fxestudio.com.ar/web/",
+    technologies: ["Next.js", "Astro", "TypeScript", "Supabase", "Netlify", "Vercel"],
+    badge: "En producción ✓"
+  },
+  {
+    id: 5,
+    title: "FM País 101.1 — Sitio Web",
+    description: "Nuevo sitio web para la radio FM País 101.1 (Aguilares, Tucumán), con reproductor de streaming en vivo, grilla de programación y panel para que la radio gestione su contenido.",
+    modalContent: {
+      title: "FM País 101.1 — Rediseño Web",
+      text: [
+        "➡️ <strong>Concepto:</strong> Sitio multipágina para la radio FM País 101.1, con reproductor de streaming en vivo persistente entre navegaciones, grilla de programación con horario en vivo calculado en tiempo real, carrusel de publicidades y enlace directo de WhatsApp.",
+        "🛠️ <strong>Estado:</strong> Publicado en su dominio propio por FX Estudio. La radio administra programas, staff, imágenes y publicidades desde un panel con inicio de sesión.",
+        "🤓 <strong>Stack técnico:</strong> Astro + TypeScript con ClientRouter para persistir el reproductor de audio entre páginas. Supabase para autenticación y contenido administrable, con renderizado en servidor en Netlify."
+      ]
+    },
+    imageUrl: `${import.meta.env.BASE_URL}images/radiopais.png`,
+    projectUrl: "https://radiopais.com.ar/",
+    technologies: ["Astro", "TypeScript", "Supabase", "Vitest", "Netlify"],
+    badge: "En producción ✓"
+  },
+  {
+    id: 6,
     title: "Portal FM Okey",
     description: "Sitio institucional para La 101.9 Radio Okey con reproductor de streaming en vivo, programas, plataformas y contacto.",
     modalContent: {
@@ -121,7 +165,24 @@ const projects = [
     badge: "Demo disponible"
   },
   {
-    id: 5,
+    id: 7,
+    title: "Recreo Digital — Videojuegos para el Aula",
+    description: "Catálogo filtrable de videojuegos educativos para docentes de secundaria, con fichas de cada juego y propuestas para integrarlos en una clase real.",
+    modalContent: {
+      title: "Recreo Digital — Catálogo de Videojuegos Educativos",
+      text: [
+        "➡️ <strong>Concepto:</strong> Plataforma para docentes de secundaria que quieren usar videojuegos en clase y no saben cuál elegir. Permite filtrar por materia y año, y cada juego tiene una ficha con capturas y una propuesta para usarlo en clase.",
+        "🛠️ <strong>Estado:</strong> Publicado. Nació como trabajo de la Licenciatura en Tecnologías Educativas (UTN FRT) y se diseñó para seguir creciendo más allá de la materia, con una próxima etapa pensada como comunidad de docentes.",
+        "🤓 <strong>Stack técnico:</strong> React + TypeScript con Vite. Desplegado en Vercel."
+      ]
+    },
+    imageUrl: `${import.meta.env.BASE_URL}images/recreo-digital.jpg`,
+    projectUrl: "https://recreo-digital.vercel.app/",
+    technologies: ["React", "TypeScript", "Vite", "Vercel"],
+    badge: "Demo disponible"
+  },
+  {
+    id: 8,
     title: "Ayuda a Diego — Adivina la Palabra",
     description: "Plataforma educativa de adivinanza de palabras con salas de docente, modo clase en vivo y pistas generadas con IA. Proyecto final de la materia Tecnologías Educativas.",
     modalContent: {
@@ -139,7 +200,7 @@ const projects = [
     badge: "En producción ✓"
   },
   {
-    id: 6,
+    id: 9,
     title: "Ahorcadito Multijugador",
     description: "Juego web multijugador en tiempo real con reconexión resiliente y arquitectura fullstack completa.",
     modalContent: {
