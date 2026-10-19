@@ -13,10 +13,10 @@ function ProjectsSection() {
   return (
     <section id="projects" className="bg-custom-section py-5">
       <Container>
-        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="zoom-in">Mis Proyectos</h2>
+        <h2 className="text-center mb-5 display-5 fw-bold" data-aos="fade-up">Mis Proyectos</h2>
         <Row className="justify-content-center gx-4 gy-4">
           {projects.map((project) => (
-            <Col key={project.id} xs={12} md={6} lg={4} data-aos="flip-down">
+            <Col key={project.id} xs={12} md={6} lg={4} data-aos="fade-up">
               <ProjectCard
                 project={project}
                 onShowModal={() => handleShowModal(project)}

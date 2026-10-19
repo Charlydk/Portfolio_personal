@@ -14,6 +14,9 @@ function HeroSection() {
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {
+    // Auto-rotating text is motion too: keep the first phrase when the user asked for less.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const interval = setInterval(() => {
       setPhraseIndex(prev => (prev + 1) % phrases.length);
     }, 3000);
@@ -42,7 +45,7 @@ function HeroSection() {
               Fabián Bernardino
             </h1>
             <h2
-              className="h3 text-primary mb-3"
+              className="h3 hero-role mb-3"
               data-aos="fade-up"
               data-aos-delay="100"
               style={{ minHeight: '2em' }}
@@ -53,7 +56,7 @@ function HeroSection() {
               Construyo las herramientas que las operaciones necesitan — del análisis del negocio al despliegue en producción.
             </p>
             <div data-aos="fade-up" data-aos-delay="400">
-              <Button variant="primary" size="lg" className="me-3 mb-2" href="#projects">
+              <Button variant="hero" size="lg" className="me-3 mb-2" href="#projects">
                 Ver proyectos
               </Button>
               <Button variant="outline-light" size="lg" className="mb-2" href="#contact">

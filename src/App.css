@@ -2,15 +2,22 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep anchored sections clear of the fixed navbar. */
+section[id] {
+  scroll-margin-top: 56px;
+}
+
 :root {
   --navy-deep: #001d3d;
   --navy-corporate: #003566;
+  --accent: #5ab0ff;
+  --accent-hover: #8cc8ff;
   --grey-text: #333533;
   --bg-light-corporate: #f8f9fa;
 }
 
-#root {
-  text-align: center;
+h1, h2, h3, h4, h5, .display-4, .display-5 {
+  letter-spacing: -0.02em;
 }
 
 /* Overrides para un look más profesional/corporativo */
@@ -23,9 +30,37 @@ html {
   border-color: var(--navy-corporate) !important;
 }
 
-.btn-outline-light:hover {
-  background-color: var(--navy-corporate) !important;
-  border-color: var(--navy-corporate) !important;
+/* Hero: light accent over the dark gradient keeps the role title and CTAs readable. */
+.hero-role {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-hero {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--navy-deep);
+  font-weight: 600;
+}
+
+.btn-hero:hover,
+.btn-hero:focus-visible {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--navy-deep);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus-visible {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: var(--navy-deep) !important;
+}
+
+.private-repo-note {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-align: center;
 }
 
 .bg-primary {
@@ -57,7 +92,6 @@ html {
   font-size: 1.15rem;
   line-height: 1.8;
   color: var(--grey-text);
-  text-align: justify;
 }
 
 .project-card {

@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, Button, Modal, Badge, Ratio, Carousel } from 'react-bootstrap';
 
 function ProjectCard({ project, onShowModal }) {
-  const { title, description, imageUrl, projectUrl, repoUrl, modalContent, technologies, videoUrl, badge } = project;
+  const { title, description, imageUrl, projectUrl, repoUrl, modalContent, technologies, badge } = project;
 
   const badgeBg = badge?.includes('producción') ? 'success'
     : badge?.includes('desarrollo') ? 'warning'
@@ -46,36 +46,20 @@ function ProjectCard({ project, onShowModal }) {
             </Button>
           )}
 
-          {/* --- INICIO DE LA LÓGICA CORREGIDA PARA EL BOTÓN DE DEMO --- */}
-          
-          {projectUrl ? (
-            // 1. Si hay un enlace a una demo en vivo, SIEMPRE se muestra este botón funcional.
+          {/* Only show actions that exist: no disabled "not available" buttons. */}
+          {projectUrl && (
             <Button variant="primary" href={projectUrl} target="_blank" rel="noopener noreferrer" className="w-100 mb-2">
               Ver Demo en Vivo
             </Button>
-          ) : videoUrl ? (
-            // 2. Si NO hay demo en vivo, PERO SÍ hay un video (que está en los detalles), se muestra este botón DESHABILITADO.
-            <Button variant="secondary" className="w-100 mb-2" disabled>
-              Demo no Disponible
-            </Button>
-          ) : (
-            // 3. Si NO hay ni demo en vivo NI video, se muestra este botón deshabilitado.
-            <Button variant="secondary" className="w-100 mb-2" disabled>
-              Demo No Disponible
-            </Button>
           )}
 
-          {/* --- FIN DE LA LÓGICA CORREGIDA --- */}
-          
           {/* Sin repoUrl = repositorio privado (proyecto de cliente o de negocio). */}
           {repoUrl ? (
             <Button variant="outline-secondary" href={repoUrl} target="_blank" rel="noopener noreferrer" className="w-100">
               Ver Repositorio
             </Button>
           ) : (
-            <Button variant="outline-secondary" className="w-100" disabled>
-              Repositorio Privado
-            </Button>
+            <p className="private-repo-note mb-0">Código privado</p>
           )}
         </div>
       </Card.Body>

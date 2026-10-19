@@ -27,7 +27,8 @@ NavbarComponent → HeroSection → AboutMe → ExperienciaComponent → Project
 ```
 
 - **Navigation is anchor-based**: navbar and hero buttons link to `#home`, `#about`, `#experiencia`, `#projects`, `#contact`. These must match the `id` on each section's root `<section>`; renaming one breaks navigation silently.
-- **AOS** is initialized once, globally, in `src/main.jsx` (`duration: 1000`, `once: true`). Sections only add `data-aos` / `data-aos-delay` attributes.
+- **AOS** is initialized in a `useEffect` in `src/App.jsx`, after the first render. Initializing it before React renders leaves every `[data-aos]` element hidden until the user scrolls. It is disabled under `prefers-reduced-motion`. Sections only add `data-aos="fade-up"` (one effect site-wide) and optional `data-aos-delay`. The same effect also scrolls to `location.hash` on load, so deep links like `/#projects` work.
+- **CSS order**: `src/main.jsx` imports Bootstrap and AOS CSS first, then the app's own CSS, so project styles win without `!important`.
 - **Projects**: `ProjectsSection` maps `src/data/projectsData.js` into `ProjectCard`s and owns the selected-project state. The modal is a static subcomponent, `ProjectCard.Modal`.
 
 ## Content
@@ -35,11 +36,15 @@ NavbarComponent → HeroSection → AboutMe → ExperienciaComponent → Project
 UI copy is in Spanish. All content is hardcoded in source files, with no CMS or MDX:
 
 - **Projects** (`src/data/projectsData.js`): fields `id`, `title`, `description`, `imageUrl`, `technologies`, plus the optional `modalContent` (`{ title, text[] }`), `videoUrl`, `projectUrl`, `repoUrl`, and `badge`.
-  - Omit `repoUrl` for private repos (client or business projects). The card then shows a disabled "Repositorio Privado" button instead of a link that would 404.
+  - Omit `repoUrl` for private repos (client or business projects). The card then shows a small "Código privado" note instead of a link that would 404. Without `projectUrl` no demo button is shown. Never render disabled "not available" buttons.
   - `modalContent.text` entries are rendered with `dangerouslySetInnerHTML`, so inline HTML (`<strong>`, etc.) works.
   - `gallery` (`[{ src, caption }]`) renders as a carousel in the modal. Screenshots of client or internal systems must have personal data and client names blurred before they are added.
   - `videoUrl` must be a YouTube **embed** URL (`/embed/...`). When it is present, the modal shows the video and its title becomes "Video Demo: …".
 - **Experience, About, Hero**: content lives directly in each component's JSX.
+
+## SEO and link previews
+
+`index.html` holds the Open Graph/Twitter tags and a JSON-LD `Person` block. Their URLs are absolute (`https://charlydk.github.io/Portfolio_personal/...`) because social crawlers do not resolve relative paths. The preview image is `public/og-image.png` (1200×630). Update title, description and these tags together when the positioning changes.
 
 ## GitHub Pages Considerations
 

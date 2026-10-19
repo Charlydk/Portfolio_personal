@@ -17,7 +17,7 @@
     background-size: 400% 400%; /* Hacemos el fondo 4 veces más grande */
     
     /* La animación más lenta para ser más sutil */
-    animation: animate-gradient 5s ease infinite;
+    animation: animate-gradient 20s ease infinite;
   
     /* Lo ponemos detrás del contenido */
     z-index: -1; 
